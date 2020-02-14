@@ -15,8 +15,4 @@ public class ClickPotScript : MonoBehaviour
     {
         
     }
-
-	private void OnMouseDown() {
-		Debug.Log("clicked pot");
-	}
 }
