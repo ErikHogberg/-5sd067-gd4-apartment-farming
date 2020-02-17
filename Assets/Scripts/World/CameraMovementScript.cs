@@ -27,11 +27,18 @@ public class CameraMovementScript : MonoBehaviour {
 	public float CameraMovementSpeed = 1.0f;
 	public float CameraTurningSpeed = 1.0f;
 
+	// [Header("test header")]
+	[Tooltip("Scale speed depending on distance between the 2 points, use this if you want the time taken to move between camera spots to always be the same")]
+	public bool UseRelativeSpeed = false;
+
+	private float distanceBuffer;
+
 	[Tooltip("If next camera spot is first spot when at last spot in the list, or if it stops at last spot")]
 	public bool LoopSpots = true;
 	public int CurrentSpot = 0;
 
 	public List<GameObject> CameraSpots;
+
 
 	void Start() {
 		mainCamera = GetComponent<Camera>();
@@ -41,24 +48,41 @@ public class CameraMovementScript : MonoBehaviour {
 
 	void Update() {
 
-		transform.position = Vector3.Lerp(
+		float moveSpeed = CameraMovementSpeed * Time.deltaTime;
+		float turnSpeed = CameraTurningSpeed * Time.deltaTime;
+
+		if (UseRelativeSpeed) {
+			moveSpeed *= distanceBuffer;
+			turnSpeed *= distanceBuffer;
+		}
+
+		transform.position = Vector3.MoveTowards(
 			transform.position,
 			CameraSpots[CurrentSpot].transform.position,
-			CameraMovementSpeed * Time.deltaTime
+			moveSpeed
 		);
 
-		transform.rotation = Quaternion.Slerp(
+		transform.rotation = Quaternion.RotateTowards(
 			transform.rotation,
 			CameraSpots[CurrentSpot].transform.rotation,
-			CameraTurningSpeed * Time.deltaTime
+			turnSpeed
 		);
 
 
 	}
 
-	private static void ClearSelected(){
+	private static void ClearSelected() {
 		ClickPotScript.ClearObject();
 	}
+
+	private void SetDistance(int targetIndex) {
+		distanceBuffer = Vector3.Distance(transform.position, CameraSpots[targetIndex].transform.position);
+	}
+
+	private void SetDistance() {
+		SetDistance(CurrentSpot);
+	}
+
 
 	public void NextCameraInternal() {
 		ClearSelected();
@@ -72,6 +96,7 @@ public class CameraMovementScript : MonoBehaviour {
 				CurrentSpot = CameraSpots.Count - 1;
 			}
 		}
+		SetDistance();
 	}
 
 	public static void NextCamera() {
@@ -80,7 +105,7 @@ public class CameraMovementScript : MonoBehaviour {
 
 	public void PrevCameraInternal() {
 		ClearSelected();
-		
+
 		CurrentSpot--;
 
 		if (CurrentSpot < 0) {
@@ -90,6 +115,7 @@ public class CameraMovementScript : MonoBehaviour {
 				CurrentSpot = 0;
 			}
 		}
+		SetDistance();
 
 	}
 

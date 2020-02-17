@@ -605,7 +605,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraMovementSpeed: 1
-  CameraTurningSpeed: 1
+  CameraTurningSpeed: 9
+  UseRelativeSpeed: 1
   LoopSpots: 1
   CurrentSpot: 0
   CameraSpots:
