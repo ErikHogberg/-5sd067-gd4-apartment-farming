@@ -2,7 +2,7 @@
 
 public class RotateScript : MonoBehaviour {
 
-	public float RotationSpeed = 1.0f;
+	public float RotationSpeed = 50.0f;
 
 	public bool EnableMouse = true;
 
@@ -18,13 +18,14 @@ public class RotateScript : MonoBehaviour {
 
 	void Update() {
 
+		// IDEA: only click rotate if clicked on object
 		if (Input.GetMouseButtonDown(0)) {
 			mouseBuffer = Input.mousePosition.x;
 		} 
         // else if (Input.GetMouseButtonUp(0)) {}
 
 		if (EnableMouse && Input.GetMouseButton(0)) {
-			transform.Rotate(Vector3.up, (Input.mousePosition.x - mouseBuffer) * MouseRotationSpeed, RelativeSpace);
+			transform.Rotate(Vector3.up, (mouseBuffer - Input.mousePosition.x) * MouseRotationSpeed, RelativeSpace);
 			mouseBuffer = Input.mousePosition.x;
 		} else {
 			transform.Rotate(Vector3.up, RotationSpeed * Time.deltaTime, RelativeSpace);

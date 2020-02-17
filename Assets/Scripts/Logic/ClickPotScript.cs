@@ -29,4 +29,11 @@ public class ClickPotScript : MonoBehaviour {
 		}
 	}
 
+	public static void ClearObject() {
+		if (spawnedObject != null) {
+			Destroy(spawnedObject);
+			spawnedObject = null;
+		}
+	}
+
 }

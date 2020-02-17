@@ -1,14 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 [RequireComponent(typeof(Camera))]
 public class CameraMovementScript : MonoBehaviour {
 
-	public static CameraMovementScript MainInstance = null;
+	private static CameraMovementScript mainInstance = null;
+	private static CameraMovementScript MainInstance {
+		get {
+
+			if (mainInstance == null) {
+				mainInstance = Camera.main.GetComponent<CameraMovementScript>();
+			}
+
+			// Crash if camera has no movement script
+			Assert.AreNotEqual(mainInstance, null);
+
+			return mainInstance;
+		}
+	}
 
 	// public static Camera MainCamera = null;
-	private Camera MainCamera = null;
+	private Camera mainCamera = null;
 
 	public float CameraMovementSpeed = 1.0f;
 	public float CameraTurningSpeed = 1.0f;
@@ -20,8 +34,8 @@ public class CameraMovementScript : MonoBehaviour {
 	public List<GameObject> CameraSpots;
 
 	void Start() {
-		MainCamera = GetComponent<Camera>();
-		MainInstance = this;
+		mainCamera = GetComponent<Camera>();
+		mainInstance = this;
 
 	}
 
@@ -42,7 +56,13 @@ public class CameraMovementScript : MonoBehaviour {
 
 	}
 
+	private static void ClearSelected(){
+		ClickPotScript.ClearObject();
+	}
+
 	public void NextCameraInternal() {
+		ClearSelected();
+
 		CurrentSpot++;
 
 		if (CurrentSpot >= CameraSpots.Count) {
@@ -59,6 +79,8 @@ public class CameraMovementScript : MonoBehaviour {
 	}
 
 	public void PrevCameraInternal() {
+		ClearSelected();
+		
 		CurrentSpot--;
 
 		if (CurrentSpot < 0) {

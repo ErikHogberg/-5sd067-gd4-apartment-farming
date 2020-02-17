@@ -125,22 +125,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7999704117066853473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9099727611949685710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53bab75beeb9f3744974b699e36e06ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotationSpeed: 1
-  EnableMouse: 1
-  MouseRotationSpeed: 1
-  RelativeSpace: 1
 --- !u!114 &6843852886236604772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +138,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToDelete: {fileID: 1442895556179829266}
+  Button: 1
+--- !u!114 &7999704117066853473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9099727611949685710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53bab75beeb9f3744974b699e36e06ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationSpeed: 50
+  EnableMouse: 1
+  MouseRotationSpeed: 1
+  RelativeSpace: 1
 --- !u!1001 &7240427648691237145
 PrefabInstance:
   m_ObjectHideFlags: 0
