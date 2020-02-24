@@ -54,7 +54,7 @@ public struct Pot {
 }
 
 [Serializable]
-public struct PlantGrowthStates {
+public struct PlantGrowthState {
 	[Tooltip("Growth amount needed to change to this model")]
 	public float GrowthValue;
 	[Tooltip("Model prefab to change to")]
@@ -68,6 +68,6 @@ public struct Plant {
 	[Tooltip("Text shown when inspecting")]
 	public string Description;
 	[Tooltip("All growth state with models for the plant when growing")]
-	public List<PlantGrowthStates> growthStates;
+	public List<PlantGrowthState> GrowthStates;
 }
 

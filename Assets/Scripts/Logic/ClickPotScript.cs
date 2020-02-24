@@ -11,6 +11,9 @@ public class ClickPotScript : MonoBehaviour {
 	private static GameObject spawnedObject = null;
 
 
+	// public float GrowthProgress; // less than 0 means no soil
+	public bool HasBeenWatered = false;
+
 	void Start() {
 		Pots.Add(this);
 	}
