@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToDelete: {fileID: 1442895556179829266}
+  SpawnedByClickScript: 1
   Button: 1
 --- !u!114 &7999704117066853473
 MonoBehaviour:
@@ -165,17 +166,17 @@ PrefabInstance:
     - target: {fileID: 1888011656428743376, guid: 1b6ee05cde9ce494db69da8179fa027a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.000000038547
       objectReference: {fileID: 0}
     - target: {fileID: 1888011656428743376, guid: 1b6ee05cde9ce494db69da8179fa027a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.61
+      value: -0.153
       objectReference: {fileID: 0}
     - target: {fileID: 1888011656428743376, guid: 1b6ee05cde9ce494db69da8179fa027a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 0.86376
       objectReference: {fileID: 0}
     - target: {fileID: 1888011656428743376, guid: 1b6ee05cde9ce494db69da8179fa027a,
         type: 3}
@@ -216,6 +217,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888011656428743376, guid: 1b6ee05cde9ce494db69da8179fa027a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18759447
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888011656428743376, guid: 1b6ee05cde9ce494db69da8179fa027a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.18759447
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888011656428743376, guid: 1b6ee05cde9ce494db69da8179fa027a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.18759447
       objectReference: {fileID: 0}
     - target: {fileID: 1888011656428743383, guid: 1b6ee05cde9ce494db69da8179fa027a,
         type: 3}
