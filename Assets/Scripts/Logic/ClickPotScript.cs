@@ -10,7 +10,6 @@ public class ClickPotScript : MonoBehaviour {
 
 	private static GameObject spawnedObject = null;
 
-	
 
 	void Start() {
 		Pots.Add(this);
@@ -43,6 +42,7 @@ public class ClickPotScript : MonoBehaviour {
 			Destroy(spawnedObject);
 			spawnedObject = null;
 		}
+		// PlantMenuScript.MainInstance.ClearPot();
 	}
 
 }

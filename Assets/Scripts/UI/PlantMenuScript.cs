@@ -14,14 +14,20 @@ public class PlantMenuScript : MonoBehaviour {
 
 	}
 
-	void Update() {
+	public void CloseMenu() {
+		gameObject.SetActive(false);
+	}
 
+	public void PopulateDropdown() {
+		// TODO: get seeds in inventory
 	}
 
 	public void InspectPot(ClickPotScript pot) {
 		// TODO: show menu
 		// TODO: populate menu
 		currentPot = pot;
+		gameObject.SetActive(true);
+
 	}
 
 	public void ClearPot() {
@@ -29,8 +35,9 @@ public class PlantMenuScript : MonoBehaviour {
 		currentPot = null;
 	}
 
-	public void CloseMenu() {
-		gameObject.SetActive(false);
+	public void WaterPlant() {
+
 	}
+
 
 }
