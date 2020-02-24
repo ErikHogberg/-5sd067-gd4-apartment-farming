@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class ClickPotScript : MonoBehaviour {
 
+	public static List<ClickPotScript> Pots = new List<ClickPotScript>();
+
 	public GameObject PrefabToInstantiate;
 
 	private static GameObject spawnedObject = null;
 
-	void Start() {
 
+	void Start() {
+		Pots.Add(this);
+	}
+
+	private void OnDestroy() {
+		Pots.Remove(this);
 	}
 
 	void Update() {
@@ -26,6 +33,7 @@ public class ClickPotScript : MonoBehaviour {
 		// TODO: remove object when changing camera spot
 		if (spawnedObject == null) {
 			spawnedObject = Instantiate(PrefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
+			PlantMenuScript.MainInstance.InspectPot(this);
 		}
 	}
 
@@ -34,6 +42,7 @@ public class ClickPotScript : MonoBehaviour {
 			Destroy(spawnedObject);
 			spawnedObject = null;
 		}
+		// PlantMenuScript.MainInstance.ClearPot();
 	}
 
 }
