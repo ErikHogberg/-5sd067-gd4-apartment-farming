@@ -23,14 +23,12 @@ public class InventoryMenuScript : MonoBehaviour {
 		// TODO: harvest plant if ready to harverst
 	}
 
-
 	public void CloseMenu() {
 		gameObject.SetActive(false);
 	}
 
 	public void ToggleMenu() {
 		gameObject.SetActive(!gameObject.activeSelf);
-
 	}
 
 }
