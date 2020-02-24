@@ -25,6 +25,7 @@ public class ClickToDeleteScript : MonoBehaviour {
 		if (Input.GetMouseButton(Button)) {
 			if (SpawnedByClickScript) {
 				ClickPotScript.ClearObject();
+				PlantMenuScript.MainInstance.ClearPot();
 			} else {
 				if (ObjectToDelete == null) {
 					Destroy(this.gameObject);
