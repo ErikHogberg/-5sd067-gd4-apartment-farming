@@ -40,9 +40,6 @@ public class ClickPotScript : MonoBehaviour {
 
 		Vector3 spawnLocation = Camera.main.transform.position;
 
-		// IDEA: remove old object instead, only if different?
-		// IDEA: spawn as child of camera so it follows when changing rooms? better if it stays?
-		// TODO: remove object when changing camera spot
 		if (spawnedObject == null) {
 			spawnedObject = Instantiate(PrefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
 			PlantMenuScript.MainInstance.InspectPot(this);
