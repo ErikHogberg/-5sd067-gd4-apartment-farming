@@ -2,10 +2,14 @@
 
 public static class GameState {
 
-	// TODO: inventory (pots, seeds)
 
 	// TODO: time
+	public static float TimeProgress = 0f;
 
 	// TODO: save game
-	
+
+	public static void Reset() {
+
+	}
+
 }

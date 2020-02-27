@@ -15,13 +15,7 @@ public class PlacePotsToggleScript : MonoBehaviour {
 		// ToggleFunction(toggle.isOn);
 	}
 
-	void Update() {
-
-
-
-	}
-
-	private static void ToggleFunction(bool toggleValue) {
+	public static void ToggleFunction(bool toggleValue) {
 		if (toggleValue) {
 			CameraMaskModeScript.MainInstance.CurrentMaskMode = CameraMaskModeScript.MaskMode.PotSpots;
 		} else {
