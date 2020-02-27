@@ -6,6 +6,8 @@ public class PlantPrefabScript : MonoBehaviour {
 
 	public float StartGrowthProgress = 0;
 	public Plant PlantSettings;
+	[Tooltip("All growth state with models for the plant when growing")]
+	public List<PlantGrowthState> GrowthStates;
 
 	private float growthProgress;
 	public float GrowthProgress {
@@ -15,7 +17,6 @@ public class PlantPrefabScript : MonoBehaviour {
 		set {
 			growthProgress = value;
 			UpdateGrowthProgress();
-
 		}
 	}
 
@@ -32,9 +33,9 @@ public class PlantPrefabScript : MonoBehaviour {
 		float highestValidValue = 0;
 		int highestValidValueIndex = 0;
 
-		for (int i = 0; i < PlantSettings.GrowthStates.Count; i++) {
+		for (int i = 0; i < GrowthStates.Count; i++) {
 
-			PlantGrowthState state = PlantSettings.GrowthStates[i];
+			PlantGrowthState state = GrowthStates[i];
 
 			state.Prefab.SetActive(false);
 
@@ -49,8 +50,20 @@ public class PlantPrefabScript : MonoBehaviour {
 
 		}
 
-		PlantSettings.GrowthStates[highestValidValueIndex].Prefab.SetActive(true);
+		GrowthStates[highestValidValueIndex].Prefab.SetActive(true);
 
+	}
+
+	public bool IncreaseGrowthProgress(float amount, float maxSize) {
+		bool belowMax = true;
+		float resultSize = growthProgress + amount;
+		if (resultSize > maxSize) {
+			resultSize = maxSize;
+			belowMax = false;
+		}
+		GrowthProgress = resultSize;
+		Debug.Log("growth: " + GrowthProgress + ", max: " + maxSize);
+		return belowMax;
 	}
 
 

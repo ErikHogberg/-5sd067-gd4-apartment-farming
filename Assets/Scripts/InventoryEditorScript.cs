@@ -24,8 +24,6 @@ public static class Inventory {
 
 	public static InventoryState State;
 
-
-
 }
 
 [Serializable]
@@ -69,9 +67,10 @@ public struct Plant {
 	public string name;
 	[Tooltip("Seed bag to show when inspecting")]
 	public GameObject SeedBagPrefab;
+	[Tooltip("Plant to spawn")]
+	public GameObject PlantPrefab;
 	[Tooltip("Text shown when inspecting")]
 	public string Description;
-	[Tooltip("All growth state with models for the plant when growing")]
-	public List<PlantGrowthState> GrowthStates;
+	
 }
 

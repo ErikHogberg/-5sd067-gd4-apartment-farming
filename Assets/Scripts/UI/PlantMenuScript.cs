@@ -8,8 +8,9 @@ public class PlantMenuScript : MonoBehaviour {
 	public static PlantMenuScript MainInstance;
 
 	public Dropdown PlantMenuDropdown;
+	// public Button PlantButton;
 
-	private ClickPotScript currentPot;
+	public ClickPotScript currentPot;
 
 	void Start() {
 		MainInstance = this;
@@ -47,13 +48,27 @@ public class PlantMenuScript : MonoBehaviour {
 	}
 
 	public void ClearPot() {
-		// TODO: hide menu
+		CloseMenu();
 		currentPot = null;
 	}
 
 	public void WaterPlant() {
 		currentPot.HasBeenWatered = true;
 
+	}
+
+	public void PlantPlant() {
+		GameObject plantPrefab = Inventory.State.Seeds[PlantMenuDropdown.value].PlantPrefab;
+		GameObject newPlant = Instantiate(
+			plantPrefab,
+			// currentPot.PlantSpawnLocation.transform.position,
+			currentPot.transform.position,
+			currentPot.transform.rotation,
+			currentPot.transform
+		);
+
+		currentPot.Plant = newPlant.GetComponent<PlantPrefabScript>();
+		Inventory.State.Seeds.RemoveAt(PlantMenuDropdown.value);
 	}
 
 
