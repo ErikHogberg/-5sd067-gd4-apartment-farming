@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PotSpotScript : MonoBehaviour {
 
+	public Transform SpawnTransform;
+
 	void Start() {
 
 	}

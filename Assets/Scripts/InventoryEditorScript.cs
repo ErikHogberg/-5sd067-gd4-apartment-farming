@@ -47,6 +47,8 @@ public class InventoryState {
 
 [Serializable]
 public struct Pot {
+	[Tooltip("Name in menus")]
+	public string name;
 	[Tooltip("Pot model prefab")]
 	public GameObject PotPrefab;
 	[Tooltip("How much a plant can grow in this pot")]
@@ -63,6 +65,8 @@ public struct PlantGrowthState {
 
 [Serializable]
 public struct Plant {
+	[Tooltip("Name in menus")]
+	public string name;
 	[Tooltip("Seed bag to show when inspecting")]
 	public GameObject SeedBagPrefab;
 	[Tooltip("Text shown when inspecting")]
