@@ -1,10 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 [RequireComponent(typeof(Camera))]
 public class CameraMovementScript : MonoBehaviour {
+
+	public enum CameraSpotType {
+		CameraSpot,
+		InbetweenSpot,
+		InbetweenSpotWaitOnlyForPosition,
+		InbetweenSpotWaitOnlyForAngle,
+	}
+
+	[Serializable]
+	public struct CameraSpot {
+		public Transform Spot;
+		public CameraSpotType Type;
+	}
 
 	private static CameraMovementScript mainInstance = null;
 	private static CameraMovementScript MainInstance {
@@ -27,6 +41,9 @@ public class CameraMovementScript : MonoBehaviour {
 	public float CameraMovementSpeed = 1.0f;
 	public float CameraTurningSpeed = 1.0f;
 
+	// if transitioning to next spot, instead of previous
+	private bool next = true;
+
 	// [Header("test header")]
 	[Tooltip("Scale speed depending on distance between the 2 points, use this if you want the time taken to move between camera spots to always be the same")]
 	public bool UseRelativeSpeed = false;
@@ -37,7 +54,7 @@ public class CameraMovementScript : MonoBehaviour {
 	public bool LoopSpots = true;
 	public int CurrentSpot = 0;
 
-	public List<GameObject> CameraSpots;
+	public List<CameraSpot> CameraSpots;
 
 
 	void Start() {
@@ -58,16 +75,46 @@ public class CameraMovementScript : MonoBehaviour {
 
 		transform.position = Vector3.MoveTowards(
 			transform.position,
-			CameraSpots[CurrentSpot].transform.position,
+			CameraSpots[CurrentSpot].Spot.transform.position,
 			moveSpeed
 		);
 
 		transform.rotation = Quaternion.RotateTowards(
 			transform.rotation,
-			CameraSpots[CurrentSpot].transform.rotation,
+			CameraSpots[CurrentSpot].Spot.transform.rotation,
 			turnSpeed
 		);
 
+		bool shouldChangeSpot = false;
+		switch (CameraSpots[CurrentSpot].Type) {
+			case CameraSpotType.CameraSpot:
+				shouldChangeSpot = false;
+				break;
+			case CameraSpotType.InbetweenSpot:
+				shouldChangeSpot =
+					transform.position == CameraSpots[CurrentSpot].Spot.transform.position
+					&& transform.rotation == CameraSpots[CurrentSpot].Spot.transform.rotation
+				;
+				break;
+			case CameraSpotType.InbetweenSpotWaitOnlyForAngle:
+				shouldChangeSpot =
+					transform.rotation == CameraSpots[CurrentSpot].Spot.transform.rotation
+				;
+				break;
+			case CameraSpotType.InbetweenSpotWaitOnlyForPosition:
+				shouldChangeSpot =
+					transform.position == CameraSpots[CurrentSpot].Spot.transform.position
+				;
+				break;
+		}
+
+		if (shouldChangeSpot) {
+			if (next) {
+				NextCameraInternal();
+			} else {
+				PrevCameraInternal();
+			}
+		}
 
 	}
 
@@ -76,7 +123,7 @@ public class CameraMovementScript : MonoBehaviour {
 	}
 
 	private void SetDistance(int targetIndex) {
-		distanceBuffer = Vector3.Distance(transform.position, CameraSpots[targetIndex].transform.position);
+		distanceBuffer = Vector3.Distance(transform.position, CameraSpots[targetIndex].Spot.transform.position);
 	}
 
 	private void SetDistance() {
@@ -87,6 +134,7 @@ public class CameraMovementScript : MonoBehaviour {
 	public void NextCameraInternal() {
 		ClearSelected();
 
+		next = true;
 		CurrentSpot++;
 
 		if (CurrentSpot >= CameraSpots.Count) {
@@ -106,6 +154,7 @@ public class CameraMovementScript : MonoBehaviour {
 	public void PrevCameraInternal() {
 		ClearSelected();
 
+		next = false;
 		CurrentSpot--;
 
 		if (CurrentSpot < 0) {

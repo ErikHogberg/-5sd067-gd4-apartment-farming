@@ -41,6 +41,7 @@ public class CameraMaskModeScript : MonoBehaviour {
 	void Start() {
 		MainInstance = this;
 		mainCamera = GetComponent<Camera>();
+		CurrentMaskMode = MaskMode.Plants;
 	}
 
 	void Update() {
