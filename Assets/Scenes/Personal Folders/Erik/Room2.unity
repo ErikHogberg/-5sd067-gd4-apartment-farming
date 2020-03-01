@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -282,18 +282,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160297463}
   m_CullTransparentMesh: 0
---- !u!114 &164445388 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 674060383611348210, guid: 25903c0d3e47c3b428e420535f65ae5d,
-    type: 3}
-  m_PrefabInstance: {fileID: 8188344473120127411}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d28bcb5c2690534a8703e93ac06011f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &184631022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,8 +1520,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164445388}
-        m_MethodName: TimeStepInstantiated
+      - m_Target: {fileID: 378374738}
+        m_MethodName: DebugTimestep
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3847,7 +3835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1063184141
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6999,7 +6987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2113760963
 RectTransform:
   m_ObjectHideFlags: 0

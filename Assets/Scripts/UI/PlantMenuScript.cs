@@ -11,6 +11,7 @@ public class PlantMenuScript : MonoBehaviour {
 	// public Button PlantButton;
 
 	public ClickPotScript currentPot;
+	// public GameObject currentPot;
 
 	void Start() {
 		MainInstance = this;
@@ -20,6 +21,7 @@ public class PlantMenuScript : MonoBehaviour {
 
 	public void CloseMenu() {
 		gameObject.SetActive(false);
+		ClickPotScript.ClearObject();
 	}
 
 	public void PopulateDropdown() {
@@ -27,17 +29,19 @@ public class PlantMenuScript : MonoBehaviour {
 
 		List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
 
+		if (currentPot.Plant != null) {
+			PlantMenuDropdown.interactable = false;
+		} else {
+			foreach (Plant seed in Inventory.State.Seeds) {
+				options.Add(new Dropdown.OptionData(seed.name));
+			}
 
-		foreach (Plant seed in Inventory.State.Seeds) {
-			options.Add(new Dropdown.OptionData(seed.name));
+			PlantMenuDropdown.interactable = options.Count > 0;
 		}
-
-		PlantMenuDropdown.interactable = options.Count > 0;
 		PlantMenuDropdown.options = options;
 	}
 
 	public void InspectPot(ClickPotScript pot) {
-		// TODO: populate menu
 		// TODO: different actions for different plant states (empty, only soil, has plant)
 		currentPot = pot;
 		PopulateDropdown();
@@ -67,8 +71,15 @@ public class PlantMenuScript : MonoBehaviour {
 			currentPot.transform
 		);
 
-		currentPot.Plant = newPlant.GetComponent<PlantPrefabScript>();
+		currentPot.GetComponent<ClickPotScript>().Plant = newPlant.GetComponent<PlantPrefabScript>();
 		Inventory.State.Seeds.RemoveAt(PlantMenuDropdown.value);
+
+		PopulateDropdown();
+		// CloseMenu();
+	}
+
+	public void DebugTimestep(float timeAmount){
+		ClickPotScript.TimeStep(timeAmount);
 	}
 
 

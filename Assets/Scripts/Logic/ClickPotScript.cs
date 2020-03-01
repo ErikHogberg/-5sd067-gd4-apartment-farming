@@ -24,6 +24,8 @@ public class ClickPotScript : MonoBehaviour {
 	void Start() {
 		Pots.Add(this);
 		// Pots.Add(gameObject);
+		Debug.Log("pot init size: " + Size + ", soil: " + SoilAmount);
+
 	}
 
 	private void OnDestroy() {
@@ -42,6 +44,7 @@ public class ClickPotScript : MonoBehaviour {
 
 		if (spawnedObject == null) {
 			spawnedObject = Instantiate(PrefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
+			Debug.Log("clicked pot size: " + Size + ", soil: " + SoilAmount);
 			PlantMenuScript.MainInstance.InspectPot(this);
 		}
 	}
@@ -54,15 +57,21 @@ public class ClickPotScript : MonoBehaviour {
 		// PlantMenuScript.MainInstance.ClearPot();
 	}
 
-	[ContextMenu("Time step")]
 	public static void TimeStep() {
-		TimeStep(5);
+		// TimeStep(5);
+		foreach (ClickPotScript pot in Pots) {
+			// foreach (GameObject potObject in Pots) {
+			// ClickPotScript pot = potObject.GetComponent<ClickPotScript>();
+			if (pot.Plant != null) {
+				pot.Plant.IncreaseGrowthProgress(5, pot.SoilAmount);
+			}
+		}
 	}
-	
+
 	public static void TimeStep(float time) {
 
 		foreach (ClickPotScript pot in Pots) {
-		// foreach (GameObject potObject in Pots) {
+			// foreach (GameObject potObject in Pots) {
 			// ClickPotScript pot = potObject.GetComponent<ClickPotScript>();
 			if (pot.Plant != null) {
 				pot.Plant.IncreaseGrowthProgress(time, pot.SoilAmount);
