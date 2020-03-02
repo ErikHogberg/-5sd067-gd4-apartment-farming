@@ -8,10 +8,10 @@ public class PlantMenuScript : MonoBehaviour {
 	public static PlantMenuScript MainInstance;
 
 	public Dropdown PlantMenuDropdown;
-	// public Button PlantButton;
+	public Text PlantAndWaterButtonText;
+	public Button HarvestButton;
 
 	public ClickPotScript currentPot;
-	// public GameObject currentPot;
 
 	void Start() {
 		MainInstance = this;
@@ -24,27 +24,30 @@ public class PlantMenuScript : MonoBehaviour {
 		ClickPotScript.ClearObject();
 	}
 
-	public void PopulateDropdown() {
-		// TODO: get seeds in inventory
+	public void PopulateUI() {
 
 		List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
 
 		if (currentPot.Plant != null) {
 			PlantMenuDropdown.interactable = false;
+			PlantAndWaterButtonText.text = "Plant";
 		} else {
 			foreach (Plant seed in Inventory.State.Seeds) {
 				options.Add(new Dropdown.OptionData(seed.name));
 			}
 
 			PlantMenuDropdown.interactable = options.Count > 0;
+			PlantAndWaterButtonText.text = "Water";
 		}
+
 		PlantMenuDropdown.options = options;
+		
 	}
 
 	public void InspectPot(ClickPotScript pot) {
 		// TODO: different actions for different plant states (empty, only soil, has plant)
 		currentPot = pot;
-		PopulateDropdown();
+		PopulateUI();
 		gameObject.SetActive(true);
 
 		// TODO: water button, disable if watered already?
@@ -54,6 +57,16 @@ public class PlantMenuScript : MonoBehaviour {
 	public void ClearPot() {
 		CloseMenu();
 		currentPot = null;
+	}
+
+	public void PlantOrWater() {
+		if (currentPot.Plant == null) {
+			PlantPlant();
+		} else {
+			WaterPlant();
+		}
+		PopulateUI();
+
 	}
 
 	public void WaterPlant() {
@@ -74,11 +87,11 @@ public class PlantMenuScript : MonoBehaviour {
 		currentPot.GetComponent<ClickPotScript>().Plant = newPlant.GetComponent<PlantPrefabScript>();
 		Inventory.State.Seeds.RemoveAt(PlantMenuDropdown.value);
 
-		PopulateDropdown();
+		// PopulateDropdown();
 		// CloseMenu();
 	}
 
-	public void DebugTimestep(float timeAmount){
+	public void DebugTimestep(float timeAmount) {
 		ClickPotScript.TimeStep(timeAmount);
 	}
 
