@@ -65,7 +65,8 @@ MonoBehaviour:
   PrefabToInstantiate: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
     type: 3}
   PlantSpawnLocation: {fileID: 8013395051581634243}
-  SoilAmount: 30
+  SoilModel: {fileID: 0}
+  StartSoilAmount: 0
   Size: 30
   Plant: {fileID: 0}
   HasBeenWatered: 0
@@ -93,7 +94,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8013395051581634243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.379, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1157, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6488449048213710741}
@@ -114,7 +115,7 @@ PrefabInstance:
     - target: {fileID: 276226771163344084, guid: f1daaaceadbe2044faf791f3309518b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.158
+      value: -0.0013
       objectReference: {fileID: 0}
     - target: {fileID: 276226771163344084, guid: f1daaaceadbe2044faf791f3309518b7,
         type: 3}
@@ -164,17 +165,17 @@ PrefabInstance:
     - target: {fileID: 276226771163344084, guid: f1daaaceadbe2044faf791f3309518b7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8641656
+      value: 0.48541912
       objectReference: {fileID: 0}
     - target: {fileID: 276226771163344084, guid: f1daaaceadbe2044faf791f3309518b7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8641656
+      value: 0.48541912
       objectReference: {fileID: 0}
     - target: {fileID: 276226771163344084, guid: f1daaaceadbe2044faf791f3309518b7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8641656
+      value: 0.48541912
       objectReference: {fileID: 0}
     - target: {fileID: 3859025298011070151, guid: f1daaaceadbe2044faf791f3309518b7,
         type: 3}
