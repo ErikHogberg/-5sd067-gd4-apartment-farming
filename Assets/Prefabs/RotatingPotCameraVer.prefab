@@ -163,6 +163,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1442895556179829267}
     m_Modifications:
+    - target: {fileID: 1888011655981994827, guid: 1b6ee05cde9ce494db69da8179fa027a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888011656373847186, guid: 1b6ee05cde9ce494db69da8179fa027a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1888011656428743376, guid: 1b6ee05cde9ce494db69da8179fa027a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,6 +247,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888011656428743383, guid: 1b6ee05cde9ce494db69da8179fa027a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888011656592098426, guid: 1b6ee05cde9ce494db69da8179fa027a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888011656957881412, guid: 1b6ee05cde9ce494db69da8179fa027a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5287987692139047351, guid: 1b6ee05cde9ce494db69da8179fa027a, type: 3}
