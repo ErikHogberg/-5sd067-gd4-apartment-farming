@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1634,76 +1634,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlantOrWater
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeIncCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeOutcCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: TimeToFadeIn
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: TimeToFadeOut
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeIncCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeIncCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeIncCurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeIncCurve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeOutcCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeOutcCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeOutcCurve.m_Curve.Array.data[1].inSlope
-      value: 0.017835893
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeOutcCurve.m_Curve.Array.data[1].outSlope
-      value: 0.017835893
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: TargetColor.a
-      value: 0.78431374
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901854000819519233, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
-        type: 3}
-      propertyPath: FadeOutcCurve.m_Curve.Array.data[1].inWeight
-      value: 0.2644663
       objectReference: {fileID: 0}
     - target: {fileID: 7901854000819519239, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
         type: 3}
