@@ -5,9 +5,20 @@ using UnityEngine;
 public class PlantPrefabScript : MonoBehaviour {
 
 	public float StartGrowthProgress = 0;
+
+	[Tooltip("How much the plant must have grown to be able to be harvested")]
+	public float HarvastableAtSize;
+
+	[Tooltip("How much growth the plant loses when harvested")]
+	public float SizeReductionOnHarvest;
+
+	[Tooltip("Value of each harvest yield (1 fruit)")]
+	public float HarvestValue;
+
 	public Plant PlantSettings;
 	[Tooltip("All growth state with models for the plant when growing")]
 	public List<PlantGrowthState> GrowthStates;
+
 
 	private float growthProgress;
 	public float GrowthProgress {
@@ -64,6 +75,18 @@ public class PlantPrefabScript : MonoBehaviour {
 		GrowthProgress = resultSize;
 		Debug.Log("growth: " + GrowthProgress + ", max: " + maxSize);
 		return belowMax;
+	}
+
+	public bool CheckIfHarvestable() {
+		return GrowthProgress > HarvastableAtSize;
+	}
+
+	public void Harvest() {
+		if (CheckIfHarvestable()) {
+			// TODO: ability to either harvest multiple times or get multiple fruit when harvesting
+			GrowthProgress -= SizeReductionOnHarvest; 
+			// TODO: add harvest value to money saved
+		}
 	}
 
 
