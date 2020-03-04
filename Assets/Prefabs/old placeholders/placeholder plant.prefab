@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4063398361071008930}
-  - component: {fileID: 7725136910156578757}
   - component: {fileID: 372013656994012821}
   - component: {fileID: 4063398361071008934}
   m_Layer: 0
@@ -36,25 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7725136910156578757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4063398361071008933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d28bcb5c2690534a8703e93ac06011f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PrefabToInstantiate: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
-    type: 3}
-  PlantSpawnLocation: {fileID: 0}
-  SoilAmount: 0
-  Size: 0
-  Plant: {fileID: 0}
-  HasBeenWatered: 0
 --- !u!54 &372013656994012821
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84,6 +64,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGrowthProgress: 0
+  HarvastableAtSize: 0
+  SizeReductionOnHarvest: 0
+  HarvestValue: 0
   PlantSettings:
     name: plant 1
     SeedBagPrefab: {fileID: 0}

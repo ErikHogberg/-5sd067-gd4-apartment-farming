@@ -24,6 +24,8 @@ public class ClickPotScript : MonoBehaviour {
 	void Start() {
 		Pots.Add(this);
 		// Pots.Add(gameObject);
+		// Debug.Log("pot init size: " + Size + ", soil: " + SoilAmount);
+
 	}
 
 	private void OnDestroy() {
@@ -36,15 +38,13 @@ public class ClickPotScript : MonoBehaviour {
 	}
 
 	private void OnMouseDown() {
-		Debug.Log("clicked pot");
+		// Debug.Log("clicked pot");
 
 		Vector3 spawnLocation = Camera.main.transform.position;
 
-		// IDEA: remove old object instead, only if different?
-		// IDEA: spawn as child of camera so it follows when changing rooms? better if it stays?
-		// TODO: remove object when changing camera spot
 		if (spawnedObject == null) {
 			spawnedObject = Instantiate(PrefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
+			// Debug.Log("clicked pot size: " + Size + ", soil: " + SoilAmount);
 			PlantMenuScript.MainInstance.InspectPot(this);
 		}
 	}
@@ -57,15 +57,21 @@ public class ClickPotScript : MonoBehaviour {
 		// PlantMenuScript.MainInstance.ClearPot();
 	}
 
-	[ContextMenu("Time step")]
 	public static void TimeStep() {
-		TimeStep(5);
+		// TimeStep(5);
+		foreach (ClickPotScript pot in Pots) {
+			// foreach (GameObject potObject in Pots) {
+			// ClickPotScript pot = potObject.GetComponent<ClickPotScript>();
+			if (pot.Plant != null) {
+				pot.Plant.IncreaseGrowthProgress(5, pot.SoilAmount);
+			}
+		}
 	}
-	
+
 	public static void TimeStep(float time) {
 
 		foreach (ClickPotScript pot in Pots) {
-		// foreach (GameObject potObject in Pots) {
+			// foreach (GameObject potObject in Pots) {
 			// ClickPotScript pot = potObject.GetComponent<ClickPotScript>();
 			if (pot.Plant != null) {
 				pot.Plant.IncreaseGrowthProgress(time, pot.SoilAmount);
