@@ -2404,6 +2404,9 @@ MonoBehaviour:
   HarvestButton: {fileID: 0}
   InspectFadePanel: {fileID: 0}
   currentPot: {fileID: 0}
+  OnOpenMenuAction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &394957933
 GameObject:
   m_ObjectHideFlags: 0
@@ -5793,6 +5796,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7901854001650347532, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.600006
+      objectReference: {fileID: 0}
     - target: {fileID: 7901854002049725883, guid: 9bcf19bd0b23a214fab7b77bf19f4bf0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -6785,6 +6793,8 @@ MonoBehaviour:
       PlantPrefab: {fileID: 4063398361071008933, guid: 7b2a00986e42d464f959725281fcf0df,
         type: 3}
       Description: 
+    DaysPassed: 0
+    DayLimit: 100
 --- !u!1 &1572177014
 GameObject:
   m_ObjectHideFlags: 0

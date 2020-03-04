@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlantMenuScript : MonoBehaviour {
@@ -16,6 +17,9 @@ public class PlantMenuScript : MonoBehaviour {
 	public FadePanelScript InspectFadePanel;
 
 	public ClickPotScript currentPot;
+
+	
+	public UnityEvent OnOpenMenuAction;
 
 	void Start() {
 		MainInstance = this;
@@ -76,6 +80,7 @@ public class PlantMenuScript : MonoBehaviour {
 		currentPot = pot;
 		PopulateUI();
 		gameObject.SetActive(true);
+		OnOpenMenuAction.Invoke();
 
 		// TODO: water button, disable if watered already?
 
