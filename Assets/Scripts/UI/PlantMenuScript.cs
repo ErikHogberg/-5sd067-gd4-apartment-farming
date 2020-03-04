@@ -18,13 +18,15 @@ public class PlantMenuScript : MonoBehaviour {
 
 	public ClickPotScript currentPot;
 
-	
+
 	public UnityEvent OnOpenMenuAction;
+
+	private static GameObject spawnedObject = null;
+
 
 	void Start() {
 		MainInstance = this;
 		gameObject.SetActive(false);
-
 	}
 
 	public void CloseMenu() {
@@ -36,7 +38,7 @@ public class PlantMenuScript : MonoBehaviour {
 			InspectFadePanel.StartFadeIn();
 		}
 		gameObject.SetActive(false);
-		ClickPotScript.ClearObject();
+		ClearPot();
 	}
 
 	public void PopulateUI() {
@@ -47,8 +49,12 @@ public class PlantMenuScript : MonoBehaviour {
 			PlantAndWaterButton.interactable = !currentPot.HasBeenWatered;
 			PlantAndWaterButtonText.text = "Water";
 			PlantMenuDropdown.interactable = false;
+
+			HarvestButton.interactable = currentPot.Plant.GrowthProgress > currentPot.Plant.HarvastableAtSize;
+
 		} else {
 			PlantAndWaterButtonText.text = "Plant";
+			HarvestButton.interactable = false;
 
 			foreach (Plant seed in Inventory.State.Seeds) {
 				options.Add(new Dropdown.OptionData(seed.name));
@@ -70,7 +76,16 @@ public class PlantMenuScript : MonoBehaviour {
 
 	}
 
+	public static void ClearObject() {
+		if (spawnedObject != null) {
+			Destroy(spawnedObject);
+			spawnedObject = null;
+		}
+		// PlantMenuScript.MainInstance.ClearPot();
+	}
+
 	public void InspectPot(ClickPotScript pot) {
+
 
 		if (InspectFadePanel != null) {
 			InspectFadePanel.StartFadeOut();
@@ -79,6 +94,7 @@ public class PlantMenuScript : MonoBehaviour {
 		// TODO: different actions for different plant states (empty, only soil, has plant)
 		currentPot = pot;
 		PopulateUI();
+		SetObject(currentPot);
 		gameObject.SetActive(true);
 		OnOpenMenuAction.Invoke();
 
@@ -86,8 +102,38 @@ public class PlantMenuScript : MonoBehaviour {
 
 	}
 
+	public void UpdateObject(ClickPotScript pot) {
+		ClearObject();
+		SetObject(pot);
+	}
+
+	public void UpdateObject() {
+		UpdateObject(currentPot);
+	}
+
+	public void SetObject(ClickPotScript pot) {
+		Vector3 spawnLocation = Camera.main.transform.position;
+
+		if (spawnedObject == null) {
+			GameObject prefabToInstantiate;//pot.PrefabToInstantiate;
+			if (pot.PlantSpawnLocation != null) {
+				prefabToInstantiate = pot.Plant.PlantSettings.SeedBagPrefab;
+			} else {
+				prefabToInstantiate = Inventory.State.Seeds[PlantMenuDropdown.value].SeedBagPrefab;
+			}
+
+			spawnedObject = Instantiate(prefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
+			// Debug.Log("clicked pot size: " + Size + ", soil: " + SoilAmount);
+		}
+	}
+
+	public void SetObject() {
+		SetObject(currentPot);
+	}
+
 	public void ClearPot() {
-		CloseMenu();
+		ClearObject();
+		// CloseMenu();
 		currentPot = null;
 	}
 

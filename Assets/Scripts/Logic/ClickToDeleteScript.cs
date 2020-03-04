@@ -24,8 +24,6 @@ public class ClickToDeleteScript : MonoBehaviour {
 	private void OnMouseOver() {
 		if (Input.GetMouseButton(Button)) {
 			if (SpawnedByClickScript) {
-				ClickPotScript.ClearObject();
-				PlantMenuScript.MainInstance.ClearPot();
 				PlantMenuScript.MainInstance.CloseMenu();
 			} else {
 				if (ObjectToDelete == null) {

@@ -7,11 +7,9 @@ public class ClickPotScript : MonoBehaviour {
 	public static List<ClickPotScript> Pots = new List<ClickPotScript>();
 	// public static List<GameObject> Pots = new List<GameObject>();
 
-	public GameObject PrefabToInstantiate;
+	// public GameObject PrefabToInstantiate;
 	public GameObject PlantSpawnLocation;
 	public GameObject SoilModel;
-
-	private static GameObject spawnedObject = null;
 
 	public float StartSoilAmount = 0;
 	private float soilAmount;
@@ -26,7 +24,7 @@ public class ClickPotScript : MonoBehaviour {
 			}
 		}
 	}
-	
+
 	public float Size = 0; // max soil amount
 	public PlantPrefabScript Plant = null;
 
@@ -54,22 +52,11 @@ public class ClickPotScript : MonoBehaviour {
 	private void OnMouseDown() {
 		// Debug.Log("clicked pot");
 
-		Vector3 spawnLocation = Camera.main.transform.position;
-
-		if (spawnedObject == null) {
-			spawnedObject = Instantiate(PrefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
-			// Debug.Log("clicked pot size: " + Size + ", soil: " + SoilAmount);
-			PlantMenuScript.MainInstance.InspectPot(this);
-		}
+		
+		PlantMenuScript.MainInstance.InspectPot(this);
 	}
 
-	public static void ClearObject() {
-		if (spawnedObject != null) {
-			Destroy(spawnedObject);
-			spawnedObject = null;
-		}
-		// PlantMenuScript.MainInstance.ClearPot();
-	}
+	
 
 	public static void TimeStep() {
 		// TimeStep(5);
