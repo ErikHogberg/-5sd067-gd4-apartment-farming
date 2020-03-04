@@ -24,7 +24,7 @@ public class ClickPotScript : MonoBehaviour {
 	void Start() {
 		Pots.Add(this);
 		// Pots.Add(gameObject);
-		Debug.Log("pot init size: " + Size + ", soil: " + SoilAmount);
+		// Debug.Log("pot init size: " + Size + ", soil: " + SoilAmount);
 
 	}
 
@@ -38,13 +38,13 @@ public class ClickPotScript : MonoBehaviour {
 	}
 
 	private void OnMouseDown() {
-		Debug.Log("clicked pot");
+		// Debug.Log("clicked pot");
 
 		Vector3 spawnLocation = Camera.main.transform.position;
 
 		if (spawnedObject == null) {
 			spawnedObject = Instantiate(PrefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
-			Debug.Log("clicked pot size: " + Size + ", soil: " + SoilAmount);
+			// Debug.Log("clicked pot size: " + Size + ", soil: " + SoilAmount);
 			PlantMenuScript.MainInstance.InspectPot(this);
 		}
 	}

@@ -7,12 +7,16 @@ using UnityEngine.UI;
 public class FadePanelScript : MonoBehaviour {
 	public static FadePanelScript MainInstance;
 
+	public Color TargetColor;
+	public bool UseStartColor = false;
+
 	public AnimationCurve FadeIncCurve;
 	public AnimationCurve FadeOutcCurve;
 
 	public float TimeToFadeIn;
 	public float TimeToFadeOut;
 
+	public UnityEvent StartEvents;
 	public UnityEvent OnFadeInStartEvents;
 	public UnityEvent OnFadeInCompletionEvents;
 	public UnityEvent OnFadeOutStartEvents;
@@ -21,8 +25,6 @@ public class FadePanelScript : MonoBehaviour {
 	private float time = 0;
 	private bool fadingIn = true;
 
-	public bool FadeInOnStart = true;
-
 	private Image panel;
 
 	void Start() {
@@ -30,9 +32,14 @@ public class FadePanelScript : MonoBehaviour {
 
 		panel = GetComponent<Image>();
 
-		if (FadeInOnStart) {
-			StartFadeIn();
+		if (UseStartColor) {
+			TargetColor = panel.color;
+		} else {
+			panel.color = TargetColor;
 		}
+
+		StartEvents.Invoke();
+
 	}
 
 	private void OnDestroy() {
@@ -59,7 +66,7 @@ public class FadePanelScript : MonoBehaviour {
 		if (fadingIn) {
 			return time / TimeToFadeIn;
 		} else {
-			return time / TimeToFadeOut;
+			return 1f - (time / TimeToFadeOut);
 		}
 	}
 
@@ -72,12 +79,12 @@ public class FadePanelScript : MonoBehaviour {
 		}
 
 		Color color = panel.color;
-		color.a = percentage;
+		color.a = TargetColor.a * percentage;
 		panel.color = color;
 
 	}
 
-	private void SetAlpha(){
+	private void SetAlpha() {
 		SetAlpha(GetFadePercentage());
 	}
 
@@ -85,17 +92,18 @@ public class FadePanelScript : MonoBehaviour {
 	public void StartFadeIn() {
 		fadingIn = true;
 		OnFadeInStartEvents.Invoke();
+		time = TimeToFadeIn;
 		StartAnyFade();
 	}
 
 	public void StartFadeOut() {
 		fadingIn = false;
 		OnFadeOutStartEvents.Invoke();
+		time = TimeToFadeOut;
 		StartAnyFade();
 	}
 
 	private void StartAnyFade() {
-		time = TimeToFadeIn;
 		gameObject.SetActive(true);
 	}
 
