@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NextDayMenuScript : MonoBehaviour {
 
@@ -15,6 +16,8 @@ public class NextDayMenuScript : MonoBehaviour {
 	public FadePanelScript FadePanel;
 
 	public Text WaterText;
+
+	public Scene nextScene; // IDEA: stay in same scene instead, make new ui state for end screen?
 
 	void Start() {
 

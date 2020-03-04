@@ -1091,9 +1091,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 620491806056965616, guid: 710b0b7772809fc4dab3b136d6ccbd59,
         type: 3}
+      propertyPath: OnOpenMenuAction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 620491806056965616, guid: 710b0b7772809fc4dab3b136d6ccbd59,
+        type: 3}
       propertyPath: InspectFadePanel
       value: 
       objectReference: {fileID: 7901854000819519233}
+    - target: {fileID: 620491806056965616, guid: 710b0b7772809fc4dab3b136d6ccbd59,
+        type: 3}
+      propertyPath: OnOpenMenuAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7901854001250987346}
+    - target: {fileID: 620491806056965616, guid: 710b0b7772809fc4dab3b136d6ccbd59,
+        type: 3}
+      propertyPath: OnOpenMenuAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 620491806056965616, guid: 710b0b7772809fc4dab3b136d6ccbd59,
+        type: 3}
+      propertyPath: OnOpenMenuAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 620491806056965616, guid: 710b0b7772809fc4dab3b136d6ccbd59,
+        type: 3}
+      propertyPath: OnOpenMenuAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 620491806056965616, guid: 710b0b7772809fc4dab3b136d6ccbd59,
+        type: 3}
+      propertyPath: OnOpenMenuAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 710b0b7772809fc4dab3b136d6ccbd59, type: 3}
 --- !u!224 &7901854002377464810 stripped
