@@ -14,6 +14,7 @@ public class InventoryEditorScript : MonoBehaviour {
 			State = Inventory.State;
 		} else {
 			Inventory.State = State;
+			// Inventory.DaysPassed = 0;
 		}
 	}
 
@@ -21,6 +22,7 @@ public class InventoryEditorScript : MonoBehaviour {
 
 
 public static class Inventory {
+
 
 	public static InventoryState State;
 
@@ -31,6 +33,9 @@ public class InventoryState {
 
 	public List<Pot> Pots = new List<Pot>();
 	public List<Plant> Seeds = new List<Plant>();
+
+	public int DaysPassed = 0;
+	public int DayLimit = 100;
 
 	public InventoryState() {
 
@@ -71,6 +76,6 @@ public struct Plant {
 	public GameObject PlantPrefab;
 	[Tooltip("Text shown when inspecting")]
 	public string Description;
-	
+
 }
 

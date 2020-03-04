@@ -9,10 +9,24 @@ public class ClickPotScript : MonoBehaviour {
 
 	public GameObject PrefabToInstantiate;
 	public GameObject PlantSpawnLocation;
+	public GameObject SoilModel;
 
 	private static GameObject spawnedObject = null;
 
-	public float SoilAmount = 0;
+	public float StartSoilAmount = 0;
+	private float soilAmount;
+	public float SoilAmount {
+		get { return soilAmount; }
+		set {
+			soilAmount = value;
+			if (soilAmount > 0) {
+				SoilModel.SetActive(true);
+			} else {
+				SoilModel.SetActive(false);
+			}
+		}
+	}
+	
 	public float Size = 0; // max soil amount
 	public PlantPrefabScript Plant = null;
 
