@@ -37,10 +37,13 @@ public class ChoosePotMenuScript : MonoBehaviour {
 		// TODO: choose pots from inventory instead
 		// IDEA: disable dropdown if inventory is empty
 
-		foreach (GameObject potPrefab in PotPrefabs) {
-			options.Add(new Dropdown.OptionData(potPrefab.name));
-		}
+		// foreach (GameObject potPrefab in PotPrefabs) {
+		// 	options.Add(new Dropdown.OptionData(potPrefab.name));
+		// }
 
+		foreach (Pot pot in Inventory.State.Pots) {
+			options.Add(new Dropdown.OptionData(pot.name));
+		}
 
 		PotMenuDropdown.interactable = options.Count > 0;
 		PotMenuDropdown.options = options;
@@ -66,11 +69,27 @@ public class ChoosePotMenuScript : MonoBehaviour {
 			return;
 		}
 
-		Instantiate(PotPrefabs[PotMenuDropdown.value],
-			currentPotSpot.transform.position, // TODO: better/more consistent pos
-			currentPotSpot.transform.rotation,
-			currentPotSpot.transform.parent
+		// Instantiate(PotPrefabs[PotMenuDropdown.value],
+		// 	currentPotSpot.transform.position, // TODO: better/more consistent pos
+		// 	currentPotSpot.transform.rotation,
+		// 	currentPotSpot.transform.parent
+		// );
+
+		GameObject potToPlace = Inventory.State.Pots[PotMenuDropdown.value].PotPrefab;
+
+		Transform spawnTranform = currentPotSpot.SpawnTransform;
+		if (spawnTranform == null) {
+			spawnTranform = currentPotSpot.transform;
+		}
+
+		Instantiate(
+			potToPlace,
+			spawnTranform.position,
+			spawnTranform.rotation,
+			spawnTranform.parent // TODO: better parent object
 		);
+
+		Inventory.State.Pots.RemoveAt(PotMenuDropdown.value);
 
 		Destroy(currentPotSpot.gameObject);
 
