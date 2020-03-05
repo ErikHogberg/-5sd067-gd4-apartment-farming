@@ -6,7 +6,7 @@ public class AddPlantUIScript : MonoBehaviour
 {
 
 	// IDEA: define cost to subtract
-	public Plant PlantToAdd;
+	// public Plant PlantToAdd;
 
     void Start()
     {
@@ -14,6 +14,6 @@ public class AddPlantUIScript : MonoBehaviour
     }
 
 	public void AddPlant(){
-		Inventory.State.Seeds.Add(PlantToAdd);
+		// Inventory.State.Seeds.Add(PlantToAdd);
 	}
 }

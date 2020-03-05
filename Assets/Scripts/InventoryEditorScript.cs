@@ -32,7 +32,8 @@ public static class Inventory {
 public class InventoryState {
 
 	public List<Pot> Pots = new List<Pot>();
-	public List<Plant> Seeds = new List<Plant>();
+	// public List<Plant> Seeds = new List<Plant>();
+	public List<GameObject> Seeds = new List<GameObject>();
 
 	public int DaysPassed = 0;
 	public int DayLimit = 100;
@@ -43,7 +44,7 @@ public class InventoryState {
 
 	public void Reset() {
 		Pots = new List<Pot>();
-		Seeds = new List<Plant>();
+		Seeds = new List<GameObject>();
 	}
 
 }
@@ -66,6 +67,7 @@ public struct PlantGrowthState {
 	public GameObject Prefab;
 }
 
+/*
 [Serializable]
 public struct Plant {
 	[Tooltip("Name in menus")]
@@ -78,4 +80,5 @@ public struct Plant {
 	public string Description;
 
 }
+*/
 
