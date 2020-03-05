@@ -16,7 +16,8 @@ public class PlantPrefabScript : MonoBehaviour {
 	public float HarvestValue;
 
 	// public Plant PlantSettings;
-
+	[Tooltip("Price to buy in store")]
+	public float Price;
 	[Tooltip("Name in menus")]
 	public string MenuName;
 	[Tooltip("Seed bag to show when inspecting")]
