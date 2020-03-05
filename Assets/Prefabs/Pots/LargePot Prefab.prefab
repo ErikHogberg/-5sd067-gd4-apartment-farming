@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &2219264601303196483
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4898999563137411243}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1703342569400799952, guid: 258acf956759fa845b8d05a743b79a7d, type: 3}
 --- !u!1 &6488449048213710738
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +42,7 @@ Transform:
   m_GameObject: {fileID: 6488449048213710738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.831, y: 0.918, z: -0.335}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85172, y: 0.85172, z: 0.85172}
   m_Children:
   - {fileID: 4821199663481124722}
   - {fileID: 4119857038520005783}
@@ -68,7 +82,6 @@ MonoBehaviour:
   MenuName: Large Pot
   Description: Thicc clay boi
   Size: 50
-  StartSoilAmount: 0
   Plant: {fileID: 0}
   HasBeenWatered: 0
 --- !u!64 &2137760776377432913
@@ -202,6 +215,12 @@ PrefabInstance:
 --- !u!4 &4119857038520005783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7730805262546219150, guid: 07b541f4d9e50574e85faf38c351aa9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5937426884721181721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4898999563137411243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1268120012475886770, guid: 07b541f4d9e50574e85faf38c351aa9f,
     type: 3}
   m_PrefabInstance: {fileID: 5937426884721181721}
   m_PrefabAsset: {fileID: 0}
