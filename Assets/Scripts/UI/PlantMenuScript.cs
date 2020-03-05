@@ -116,7 +116,7 @@ public class PlantMenuScript : MonoBehaviour {
 
 		if (spawnedObject == null) {
 			GameObject prefabToInstantiate;//pot.PrefabToInstantiate;
-			if (pot.PlantSpawnLocation != null) {
+			if (pot.Plant != null) {
 				prefabToInstantiate = pot.Plant.PlantSettings.SeedBagPrefab;
 			} else {
 				prefabToInstantiate = Inventory.State.Seeds[PlantMenuDropdown.value].SeedBagPrefab;
@@ -164,6 +164,7 @@ public class PlantMenuScript : MonoBehaviour {
 
 		currentPot.GetComponent<ClickPotScript>().Plant = newPlant.GetComponent<PlantPrefabScript>();
 		Inventory.State.Seeds.RemoveAt(PlantMenuDropdown.value);
+		PlantMenuDropdown.value = 0;
 
 		// PopulateDropdown();
 		// CloseMenu();

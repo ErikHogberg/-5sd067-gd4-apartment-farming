@@ -238,6 +238,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7901854001132989324}
     m_Modifications:
+    - target: {fileID: 4857629550902612936, guid: 1a4075863565a7e42b2564b7d30a9054,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4857629550902612937, guid: 1a4075863565a7e42b2564b7d30a9054,
         type: 3}
       propertyPath: FadeIncCurve.m_Curve.Array.size

@@ -21,6 +21,7 @@ public class FadePanelScript : MonoBehaviour {
 	public UnityEvent OnFadeInCompletionEvents;
 	public UnityEvent OnFadeOutStartEvents;
 	public UnityEvent OnFadeOutCompletionEvents;
+	public UnityEvent OnClick;
 
 	private float time = 0;
 	private bool fadingIn = true;
@@ -107,5 +108,8 @@ public class FadePanelScript : MonoBehaviour {
 		gameObject.SetActive(true);
 	}
 
+	private void OnMouseDown() {
+		OnClick.Invoke();
+	}
 
 }
