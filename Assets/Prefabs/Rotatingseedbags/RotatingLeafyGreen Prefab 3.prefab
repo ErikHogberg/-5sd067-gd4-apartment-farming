@@ -218,6 +218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeafyGreenSeed Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5132219692003977028, guid: 6df1f8ff92e4aaa4184db394217ff696,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8170118266316887383, guid: 6df1f8ff92e4aaa4184db394217ff696,
         type: 3}
       propertyPath: m_LocalPosition.x

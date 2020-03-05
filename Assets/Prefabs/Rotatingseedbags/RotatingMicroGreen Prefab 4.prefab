@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1442895556179829267}
   m_Layer: 0
-  m_Name: RMicroGreen Prefab 4
+  m_Name: RotatingMicroGreen Prefab 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,6 +287,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MicroGreenSeed Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253104091389549340, guid: 3feea63c4776d004a820d7782cb8933c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3feea63c4776d004a820d7782cb8933c, type: 3}
