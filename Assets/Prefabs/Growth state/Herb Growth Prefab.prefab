@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 372013656994012821}
   - component: {fileID: 4063398361071008934}
   m_Layer: 0
-  m_Name: Tomato Growth Prefab 1
+  m_Name: Herb Growth Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,14 +64,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGrowthProgress: 0
-  HarvastableAtSize: 0
-  SizeReductionOnHarvest: 0
-  HarvestValue: 0
-  PlantSettings:
-    name: plant 1
-    SeedBagPrefab: {fileID: 0}
-    PlantPrefab: {fileID: 4063398361071008933}
-    Description: plant 1
+  HarvastableAtSize: 15
+  SizeReductionOnHarvest: 10
+  HarvestValue: 1
+  Price: 0
+  MenuName: Persley
+  SeedBagPrefab: {fileID: 1442895556179829266, guid: 6f343dac09902794aa420ff6cbfc4a38,
+    type: 3}
+  Description: Just normal parsley, nothing special
   GrowthStates:
   - GrowthValue: 0
     Prefab: {fileID: 8510118352040745318}
@@ -189,17 +189,17 @@ PrefabInstance:
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.062179
+      value: -0.0405
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.28685
+      value: -0.2659
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.092749
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
@@ -244,17 +244,17 @@ PrefabInstance:
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.430889
+      value: 0.9813895
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.430889
+      value: 0.9813895
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.430889
+      value: 0.9813895
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a04c897402b24ad48855e2c7cc0e8b2f, type: 3}
@@ -504,17 +504,17 @@ PrefabInstance:
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.065616
+      value: -0.043936998
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.314
+      value: -0.29305
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.084525
+      value: -0.012224004
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
@@ -559,17 +559,17 @@ PrefabInstance:
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.90586
+      value: 0.6212931
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.90586
+      value: 0.6212931
       objectReference: {fileID: 0}
     - target: {fileID: 3747529155876822062, guid: a04c897402b24ad48855e2c7cc0e8b2f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.90586
+      value: 0.6212931
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a04c897402b24ad48855e2c7cc0e8b2f, type: 3}

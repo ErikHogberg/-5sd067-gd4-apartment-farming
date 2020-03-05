@@ -29,13 +29,16 @@ public class InventoryMenuScript : MonoBehaviour {
 		string outText = "";
 
 		outText += "Pots";
-		foreach (Pot item in Inventory.State.Pots) {
-			outText += Environment.NewLine + item.name;
+		foreach (GameObject item in Inventory.State.Pots) {
+			outText += Environment.NewLine + item.GetComponent<ClickPotScript>().MenuName;
 		}
 
 		outText += Environment.NewLine + Environment.NewLine + "Seeds";
-		foreach (Plant item in Inventory.State.Seeds) {
-			outText += Environment.NewLine + item.name + " (" + item.Description + ")";
+		foreach (GameObject item in Inventory.State.Seeds) {
+			outText += Environment.NewLine
+				+ item.name
+				+ " (" + item.GetComponent<PlantPrefabScript>().Description + ")"
+			;
 		}
 
 

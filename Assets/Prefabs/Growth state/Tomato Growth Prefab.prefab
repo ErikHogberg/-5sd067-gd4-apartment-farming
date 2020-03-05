@@ -67,11 +67,11 @@ MonoBehaviour:
   HarvastableAtSize: 0
   SizeReductionOnHarvest: 0
   HarvestValue: 0
-  PlantSettings:
-    name: plant 1
-    SeedBagPrefab: {fileID: 0}
-    PlantPrefab: {fileID: 4063398361071008933}
-    Description: plant 1
+  Price: 0
+  MenuName: 
+  SeedBagPrefab: {fileID: 1442895556179829266, guid: 3cc5644cbeaa94d418476fbdf9723e25,
+    type: 3}
+  Description: 
   GrowthStates:
   - GrowthValue: 0
     Prefab: {fileID: 8510118352040745318}

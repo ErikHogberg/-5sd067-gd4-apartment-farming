@@ -67,11 +67,11 @@ MonoBehaviour:
   HarvastableAtSize: 0
   SizeReductionOnHarvest: 0
   HarvestValue: 0
-  PlantSettings:
-    name: plant 1
-    SeedBagPrefab: {fileID: 0}
-    PlantPrefab: {fileID: 4063398361071008933}
-    Description: plant 1
+  Price: 0
+  MenuName: Micro Greens
+  SeedBagPrefab: {fileID: 1442895556179829266, guid: 5eb3577097ad033498362e57bedf29a5,
+    type: 3}
+  Description: Huge, massive plant the size of buildings
   GrowthStates:
   - GrowthValue: 0
     Prefab: {fileID: 8510118352040745318}
@@ -264,12 +264,12 @@ PrefabInstance:
     - target: {fileID: 5990934882613619680, guid: e6d23b32ab4acfb4898f06b22fb27615,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.308
+      value: -0.3006
       objectReference: {fileID: 0}
     - target: {fileID: 5990934882613619680, guid: e6d23b32ab4acfb4898f06b22fb27615,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0652
       objectReference: {fileID: 0}
     - target: {fileID: 5990934882613619680, guid: e6d23b32ab4acfb4898f06b22fb27615,
         type: 3}
@@ -339,12 +339,12 @@ PrefabInstance:
     - target: {fileID: 5990934882613619680, guid: e6d23b32ab4acfb4898f06b22fb27615,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.317
+      value: -0.3096
       objectReference: {fileID: 0}
     - target: {fileID: 5990934882613619680, guid: e6d23b32ab4acfb4898f06b22fb27615,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0083
+      value: -0.056900002
       objectReference: {fileID: 0}
     - target: {fileID: 5990934882613619680, guid: e6d23b32ab4acfb4898f06b22fb27615,
         type: 3}

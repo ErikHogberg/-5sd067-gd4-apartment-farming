@@ -119,7 +119,7 @@ public class CameraMovementScript : MonoBehaviour {
 	}
 
 	private static void ClearSelected() {
-		ClickPotScript.ClearObject();
+		PlantMenuScript.ClearObject();
 	}
 
 	private void SetDistance(int targetIndex) {

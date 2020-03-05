@@ -11,11 +11,22 @@ public class PlantPrefabScript : MonoBehaviour {
 
 	[Tooltip("How much growth the plant loses when harvested")]
 	public float SizeReductionOnHarvest;
+	[Tooltip("If plant is consumed/destroyed on harvest")]
+	public bool ConsumeOnHarvest = false;
 
 	[Tooltip("Value of each harvest yield (1 fruit)")]
 	public float HarvestValue;
 
-	public Plant PlantSettings;
+	// public Plant PlantSettings;
+	[Tooltip("Price to buy in store")]
+	public float Price;
+	[Tooltip("Name in menus")]
+	public string MenuName;
+	[Tooltip("Seed bag to show when inspecting")]
+	public GameObject SeedBagPrefab;
+	[Tooltip("Text shown when inspecting")]
+	public string Description;
+
 	[Tooltip("All growth state with models for the plant when growing")]
 	public List<PlantGrowthState> GrowthStates;
 
@@ -84,7 +95,7 @@ public class PlantPrefabScript : MonoBehaviour {
 	public void Harvest() {
 		if (CheckIfHarvestable()) {
 			// TODO: ability to either harvest multiple times or get multiple fruit when harvesting
-			GrowthProgress -= SizeReductionOnHarvest; 
+			GrowthProgress -= SizeReductionOnHarvest;
 			// TODO: add harvest value to money saved
 		}
 	}
