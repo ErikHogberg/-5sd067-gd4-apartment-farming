@@ -2680,18 +2680,8 @@ MonoBehaviour:
         type: 3}
       PotSize: 0
     Seeds:
-    - name: seed 1
-      SeedBagPrefab: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
-        type: 3}
-      PlantPrefab: {fileID: 4063398361071008933, guid: 7b2a00986e42d464f959725281fcf0df,
-        type: 3}
-      Description: 
-    - name: seed 2
-      SeedBagPrefab: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
-        type: 3}
-      PlantPrefab: {fileID: 4063398361071008933, guid: 7b2a00986e42d464f959725281fcf0df,
-        type: 3}
-      Description: 
+    - {fileID: 4063398361071008933, guid: 737e928164717204badea64134502bc7, type: 3}
+    - {fileID: 4063398361071008933, guid: ecf7fa7e2ec766c439e5b797a2a5594c, type: 3}
     DaysPassed: 0
     DayLimit: 100
 --- !u!1 &1581388556

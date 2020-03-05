@@ -56,8 +56,8 @@ public class PlantMenuScript : MonoBehaviour {
 			PlantAndWaterButtonText.text = "Plant";
 			HarvestButton.interactable = false;
 
-			foreach (Plant seed in Inventory.State.Seeds) {
-				options.Add(new Dropdown.OptionData(seed.name));
+			foreach (GameObject seed in Inventory.State.Seeds) {
+				options.Add(new Dropdown.OptionData(seed.GetComponent<PlantPrefabScript>().MenuName));
 			}
 			bool outOfSeeds = options.Count < 1;
 
@@ -117,9 +117,10 @@ public class PlantMenuScript : MonoBehaviour {
 		if (spawnedObject == null) {
 			GameObject prefabToInstantiate;//pot.PrefabToInstantiate;
 			if (pot.Plant != null) {
-				prefabToInstantiate = pot.Plant.PlantSettings.SeedBagPrefab;
+				prefabToInstantiate = pot.Plant.SeedBagPrefab;
 			} else {
-				prefabToInstantiate = Inventory.State.Seeds[PlantMenuDropdown.value].SeedBagPrefab;
+				PlantPrefabScript menuPlant = Inventory.State.Seeds[PlantMenuDropdown.value].GetComponent<PlantPrefabScript>();
+				prefabToInstantiate = menuPlant.SeedBagPrefab;
 			}
 
 			spawnedObject = Instantiate(prefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
@@ -153,11 +154,11 @@ public class PlantMenuScript : MonoBehaviour {
 	}
 
 	public void PlantPlant() {
-		GameObject plantPrefab = Inventory.State.Seeds[PlantMenuDropdown.value].PlantPrefab;
+		GameObject plantPrefab = Inventory.State.Seeds[PlantMenuDropdown.value];
 		GameObject newPlant = Instantiate(
 			plantPrefab,
-			// currentPot.PlantSpawnLocation.transform.position,
-			currentPot.transform.position,
+			currentPot.PlantSpawnLocation.transform.position,
+			// currentPot.transform.position,
 			currentPot.transform.rotation,
 			currentPot.transform
 		);

@@ -64,14 +64,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGrowthProgress: 0
-  HarvastableAtSize: 0
-  SizeReductionOnHarvest: 0
-  HarvestValue: 0
-  PlantSettings:
-    name: plant 1
-    SeedBagPrefab: {fileID: 0}
-    PlantPrefab: {fileID: 4063398361071008933}
-    Description: plant 1
+  HarvastableAtSize: 25
+  SizeReductionOnHarvest: 20
+  HarvestValue: 1
+  MenuName: Leafy Greens
+  SeedBagPrefab: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
+    type: 3}
+  Description: A chocobos favorite food
   GrowthStates:
   - GrowthValue: 0
     Prefab: {fileID: 8510118352040745318}
