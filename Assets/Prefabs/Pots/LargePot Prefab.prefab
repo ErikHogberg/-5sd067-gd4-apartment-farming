@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6488449048213710741}
   - component: {fileID: 7441676377491604898}
   - component: {fileID: 3647361542837985562}
+  - component: {fileID: 2137760776377432913}
   m_Layer: 0
-  m_Name: LargePot Prefab 2
+  m_Name: LargePot Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,13 +63,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d28bcb5c2690534a8703e93ac06011f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabToInstantiate: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
-    type: 3}
   PlantSpawnLocation: {fileID: 8013395051581634243}
-  SoilAmount: 30
-  Size: 30
+  SoilModel: {fileID: 0}
+  MenuName: Large Pot
+  Description: Thicc clay boi
+  Size: 50
+  StartSoilAmount: 0
   Plant: {fileID: 0}
   HasBeenWatered: 0
+--- !u!64 &2137760776377432913
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488449048213710738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8013395051581634243
 GameObject:
   m_ObjectHideFlags: 0

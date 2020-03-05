@@ -12,7 +12,7 @@ public class ChoosePotMenuScript : MonoBehaviour {
 
 	private PotSpotScript currentPotSpot;
 
-	public List<GameObject> PotPrefabs;
+	// public List<GameObject> PotPrefabs;
 
 	void Start() {
 		MainInstance = this;
@@ -34,15 +34,12 @@ public class ChoosePotMenuScript : MonoBehaviour {
 	private void PopulateDropDown() {
 		List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
 
-		// TODO: choose pots from inventory instead
-		// IDEA: disable dropdown if inventory is empty
-
 		// foreach (GameObject potPrefab in PotPrefabs) {
 		// 	options.Add(new Dropdown.OptionData(potPrefab.name));
 		// }
 
-		foreach (Pot pot in Inventory.State.Pots) {
-			options.Add(new Dropdown.OptionData(pot.name));
+		foreach (GameObject pot in Inventory.State.Pots) {
+			options.Add(new Dropdown.OptionData(pot.GetComponent<ClickPotScript>().MenuName));
 		}
 
 		PotMenuDropdown.interactable = options.Count > 0;
@@ -75,7 +72,7 @@ public class ChoosePotMenuScript : MonoBehaviour {
 		// 	currentPotSpot.transform.parent
 		// );
 
-		GameObject potToPlace = Inventory.State.Pots[PotMenuDropdown.value].PotPrefab;
+		GameObject potToPlace = Inventory.State.Pots[PotMenuDropdown.value];
 
 		Transform spawnTranform = currentPotSpot.SpawnTransform;
 		if (spawnTranform == null) {

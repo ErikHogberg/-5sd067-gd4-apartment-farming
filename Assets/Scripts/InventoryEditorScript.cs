@@ -31,8 +31,9 @@ public static class Inventory {
 [Serializable]
 public class InventoryState {
 
-	public List<Pot> Pots = new List<Pot>();
-	public List<Plant> Seeds = new List<Plant>();
+	public float Cash = 1000000f;
+	public List<GameObject> Pots = new List<GameObject>();
+	public List<GameObject> Seeds = new List<GameObject>();
 
 	public int DaysPassed = 0;
 	public int DayLimit = 100;
@@ -42,21 +43,21 @@ public class InventoryState {
 	}
 
 	public void Reset() {
-		Pots = new List<Pot>();
-		Seeds = new List<Plant>();
+		Pots = new List<GameObject>();
+		Seeds = new List<GameObject>();
 	}
 
 }
 
-[Serializable]
-public struct Pot {
-	[Tooltip("Name in menus")]
-	public string name;
-	[Tooltip("Pot model prefab")]
-	public GameObject PotPrefab;
-	[Tooltip("How much a plant can grow in this pot")]
-	public int PotSize;
-}
+// [Serializable]
+// public struct Pot {
+// 	[Tooltip("Name in menus")]
+// 	public string name;
+// 	[Tooltip("Pot model prefab")]
+// 	public GameObject PotPrefab;
+// 	[Tooltip("How much a plant can grow in this pot")]
+// 	public int PotSize;
+// }
 
 [Serializable]
 public struct PlantGrowthState {
@@ -66,6 +67,7 @@ public struct PlantGrowthState {
 	public GameObject Prefab;
 }
 
+/*
 [Serializable]
 public struct Plant {
 	[Tooltip("Name in menus")]
@@ -78,4 +80,5 @@ public struct Plant {
 	public string Description;
 
 }
+*/
 
