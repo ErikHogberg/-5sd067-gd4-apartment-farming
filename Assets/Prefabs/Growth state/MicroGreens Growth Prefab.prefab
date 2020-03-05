@@ -67,8 +67,9 @@ MonoBehaviour:
   HarvastableAtSize: 0
   SizeReductionOnHarvest: 0
   HarvestValue: 0
+  Price: 0
   MenuName: Micro Greens
-  SeedBagPrefab: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
+  SeedBagPrefab: {fileID: 1442895556179829266, guid: 5eb3577097ad033498362e57bedf29a5,
     type: 3}
   Description: Huge, massive plant the size of buildings
   GrowthStates:
