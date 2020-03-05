@@ -19,10 +19,12 @@ public class ClickPotScript : MonoBehaviour {
 		get { return soilAmount; }
 		set {
 			soilAmount = value;
-			if (soilAmount > 0) {
-				SoilModel.SetActive(true);
-			} else {
-				SoilModel.SetActive(false);
+			if(SoilModel != null) { 
+				if (soilAmount > 0) {
+					SoilModel.SetActive(true);
+				} else {
+					SoilModel.SetActive(false);
+				}
 			}
 		}
 	}
