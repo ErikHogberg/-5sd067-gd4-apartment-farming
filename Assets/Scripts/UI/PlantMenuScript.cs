@@ -13,6 +13,7 @@ public class PlantMenuScript : MonoBehaviour {
 	public Text PlantAndWaterButtonText;
 	public Button AddSoilButton;
 	public Button HarvestButton;
+	public Text RemovePlantButtonText;
 
 	public FadePanelScript InspectFadePanel;
 
@@ -75,6 +76,12 @@ public class PlantMenuScript : MonoBehaviour {
 		}
 
 		HarvestButton.interactable = IsHarvestable();
+
+		if (currentPot.Plant != null) {
+			RemovePlantButtonText.text = "Remove Plant";
+		} else {
+			RemovePlantButtonText.text = "Remove Pot";
+		}
 
 	}
 
@@ -146,13 +153,14 @@ public class PlantMenuScript : MonoBehaviour {
 		} else {
 			WaterPlant();
 		}
-		UpdateUI();
+		// UpdateUI();
 
 	}
 
 	public void WaterPlant() {
 		currentPot.HasBeenWatered = true;
-
+		UpdateUI();
+		WaterParticleScript.MainInstance.StartSpray();
 	}
 
 	public void PlantPlant() {
@@ -169,6 +177,7 @@ public class PlantMenuScript : MonoBehaviour {
 		Inventory.State.Seeds.RemoveAt(PlantMenuDropdown.value);
 		PlantMenuDropdown.value = 0;
 
+		UpdateUI();
 		// PopulateDropdown();
 		// CloseMenu();
 	}
@@ -194,7 +203,12 @@ public class PlantMenuScript : MonoBehaviour {
 	}
 
 	public void RemovePlant() {
-		currentPot.RemovePlant();
+		if (currentPot.Plant != null) {
+			currentPot.RemovePlant();
+			UpdateUI();
+		} else {
+			// TODO: remove pot, close this menu
+		}
 	}
 
 	public void DebugTimestep(float timeAmount) {
