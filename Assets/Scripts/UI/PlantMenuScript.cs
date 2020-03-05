@@ -41,7 +41,7 @@ public class PlantMenuScript : MonoBehaviour {
 		ClearPot();
 	}
 
-	public void PopulateUI() {
+	public void UpdateUI() {
 
 		List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
 
@@ -74,6 +74,8 @@ public class PlantMenuScript : MonoBehaviour {
 			AddSoilButton.interactable = true;
 		}
 
+		HarvestButton.interactable = IsHarvestable();
+
 	}
 
 	public static void ClearObject() {
@@ -93,7 +95,7 @@ public class PlantMenuScript : MonoBehaviour {
 
 		// TODO: different actions for different plant states (empty, only soil, has plant)
 		currentPot = pot;
-		PopulateUI();
+		UpdateUI();
 		SetObject(currentPot);
 		gameObject.SetActive(true);
 		OnOpenMenuAction.Invoke();
@@ -144,7 +146,7 @@ public class PlantMenuScript : MonoBehaviour {
 		} else {
 			WaterPlant();
 		}
-		PopulateUI();
+		UpdateUI();
 
 	}
 
@@ -169,6 +171,22 @@ public class PlantMenuScript : MonoBehaviour {
 
 		// PopulateDropdown();
 		// CloseMenu();
+	}
+
+	public void Harvest() {
+		if (IsHarvestable()) {
+			currentPot.Plant.GrowthProgress -= currentPot.Plant.HarvastableAtSize;
+			Inventory.State.Cash += currentPot.Plant.HarvestValue;
+		}
+		UpdateUI();
+	}
+
+	public bool IsHarvestable() {
+		return
+			currentPot.Plant != null
+			&& currentPot.Plant.GrowthProgress > currentPot.Plant.HarvastableAtSize
+		;
+
 	}
 
 	public void DebugTimestep(float timeAmount) {
