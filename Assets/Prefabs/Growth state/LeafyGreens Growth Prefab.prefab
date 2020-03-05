@@ -67,8 +67,9 @@ MonoBehaviour:
   HarvastableAtSize: 25
   SizeReductionOnHarvest: 20
   HarvestValue: 1
+  Price: 0
   MenuName: Leafy Greens
-  SeedBagPrefab: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
+  SeedBagPrefab: {fileID: 1442895556179829266, guid: 30ac8941182776841a82345494a041d7,
     type: 3}
   Description: A chocobos favorite food
   GrowthStates:
