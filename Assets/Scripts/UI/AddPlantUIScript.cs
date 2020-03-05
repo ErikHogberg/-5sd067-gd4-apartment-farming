@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AddPlantUIScript : MonoBehaviour
-{
+// public class AddPlantUIScript : MonoBehaviour
+// {
 
-	// IDEA: define cost to subtract
-	// public Plant PlantToAdd;
+// 	// IDEA: define cost to subtract
+// 	// public Plant PlantToAdd;
 
-    void Start()
-    {
+//     void Start()
+//     {
         
-    }
+//     }
 
-	public void AddPlant(){
-		// Inventory.State.Seeds.Add(PlantToAdd);
-	}
-}
+// 	public void AddPlant(){
+// 		// Inventory.State.Seeds.Add(PlantToAdd);
+// 	}
+// }

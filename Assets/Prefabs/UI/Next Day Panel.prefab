@@ -534,7 +534,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -878,6 +878,8 @@ MonoBehaviour:
   DayText: {fileID: 5476593658314424350}
   FadePanel: {fileID: 0}
   WaterText: {fileID: 1231601219151536509}
+  nextScene:
+    m_Handle: 0
 --- !u!1 &1231601220634789792
 GameObject:
   m_ObjectHideFlags: 0

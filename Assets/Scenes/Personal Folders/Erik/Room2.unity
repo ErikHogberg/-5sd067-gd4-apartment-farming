@@ -1652,6 +1652,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3581361581181360928, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361581181360928, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361581181360928, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3581361581263788139, guid: 546023d82cd9b0649a6be1967b1435a2,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -2666,19 +2681,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetGlobals: 0
   State:
+    Cash: 1000000
     Pots:
-    - name: Small pot
-      PotPrefab: {fileID: 6488449048213710738, guid: 9fc360869b25d6b4c8331075c0aaf14e,
-        type: 3}
-      PotSize: 0
-    - name: Medium pot
-      PotPrefab: {fileID: 6488449048213710738, guid: 6f4f6103458015b4ca40012178d8b6d9,
-        type: 3}
-      PotSize: 0
-    - name: Large pot
-      PotPrefab: {fileID: 6488449048213710738, guid: 6f17425e3f8e8054e8a6d71ca5a1d778,
-        type: 3}
-      PotSize: 0
+    - {fileID: 6488449048213710738, guid: 9fc360869b25d6b4c8331075c0aaf14e, type: 3}
+    - {fileID: 6488449048213710738, guid: 6f4f6103458015b4ca40012178d8b6d9, type: 3}
+    - {fileID: 6488449048213710738, guid: 6f17425e3f8e8054e8a6d71ca5a1d778, type: 3}
     Seeds:
     - {fileID: 4063398361071008933, guid: 737e928164717204badea64134502bc7, type: 3}
     - {fileID: 4063398361071008933, guid: ecf7fa7e2ec766c439e5b797a2a5594c, type: 3}

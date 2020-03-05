@@ -11,13 +11,21 @@ public class ClickPotScript : MonoBehaviour {
 	public GameObject PlantSpawnLocation;
 	public GameObject SoilModel;
 
+	[Tooltip("Name in menus")]
+	public string MenuName;
+	[Tooltip("Text shown when inspecting")]
+	public string Description;
+	// public float GrowthProgress; // less than 0 means no soil
+	[Tooltip("How much a plant can grow in this pot (how much soil fits in it)")]
+	public float Size = 0; // max soil amount
+
 	public float StartSoilAmount = 0;
 	private float soilAmount;
 	public float SoilAmount {
 		get { return soilAmount; }
 		set {
 			soilAmount = value;
-			if(SoilModel != null) { 
+			if (SoilModel != null) {
 				if (soilAmount > 0) {
 					SoilModel.SetActive(true);
 				} else {
@@ -27,10 +35,7 @@ public class ClickPotScript : MonoBehaviour {
 		}
 	}
 
-	public float Size = 0; // max soil amount
 	public PlantPrefabScript Plant = null;
-
-	// public float GrowthProgress; // less than 0 means no soil
 	public bool HasBeenWatered = false;
 
 
@@ -52,30 +57,20 @@ public class ClickPotScript : MonoBehaviour {
 	}
 
 	private void OnMouseDown() {
-		// Debug.Log("clicked pot");
-
-		
-		PlantMenuScript.MainInstance.InspectPot(this);
+		if (!PlantMenuScript.MainInstance.gameObject.activeSelf) {
+			PlantMenuScript.MainInstance.InspectPot(this);
+		}
 	}
 
-	
+
 
 	public static void TimeStep() {
-		// TimeStep(5);
-		foreach (ClickPotScript pot in Pots) {
-			// foreach (GameObject potObject in Pots) {
-			// ClickPotScript pot = potObject.GetComponent<ClickPotScript>();
-			if (pot.Plant != null) {
-				pot.Plant.IncreaseGrowthProgress(5, pot.SoilAmount);
-			}
-		}
+		TimeStep(5);
 	}
 
 	public static void TimeStep(float time) {
 
 		foreach (ClickPotScript pot in Pots) {
-			// foreach (GameObject potObject in Pots) {
-			// ClickPotScript pot = potObject.GetComponent<ClickPotScript>();
 			if (pot.Plant != null) {
 				pot.Plant.IncreaseGrowthProgress(time, pot.SoilAmount);
 			}

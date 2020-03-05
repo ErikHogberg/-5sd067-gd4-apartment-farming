@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class FadePanelScript : MonoBehaviour {
+public class FadePanelScript : MonoBehaviour, IPointerClickHandler {
 	public static FadePanelScript MainInstance;
 
 	public Color TargetColor;
@@ -108,8 +109,10 @@ public class FadePanelScript : MonoBehaviour {
 		gameObject.SetActive(true);
 	}
 
-	private void OnMouseDown() {
-		OnClick.Invoke();
+	public void OnPointerClick(PointerEventData eventData) {
+		if (time <= 0) {
+			OnClick.Invoke();
+		}
 	}
 
 }
