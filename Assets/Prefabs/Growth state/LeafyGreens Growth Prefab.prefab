@@ -66,6 +66,7 @@ MonoBehaviour:
   StartGrowthProgress: 0
   HarvastableAtSize: 25
   SizeReductionOnHarvest: 20
+  ConsumeOnHarvest: 1
   HarvestValue: 1
   Price: 0
   MenuName: Leafy Greens
