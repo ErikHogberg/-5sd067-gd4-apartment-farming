@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 372013656994012821}
   - component: {fileID: 4063398361071008934}
   m_Layer: 0
-  m_Name: Tomato Growth Prefab 1
+  m_Name: Herb Growth Prefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,14 +64,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGrowthProgress: 0
-  HarvastableAtSize: 0
-  SizeReductionOnHarvest: 0
-  HarvestValue: 0
-  PlantSettings:
-    name: plant 1
-    SeedBagPrefab: {fileID: 0}
-    PlantPrefab: {fileID: 4063398361071008933}
-    Description: plant 1
+  HarvastableAtSize: 15
+  SizeReductionOnHarvest: 10
+  HarvestValue: 1
+  MenuName: Persley
+  SeedBagPrefab: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
+    type: 3}
+  Description: Just normal parsley, nothing special
   GrowthStates:
   - GrowthValue: 0
     Prefab: {fileID: 8510118352040745318}

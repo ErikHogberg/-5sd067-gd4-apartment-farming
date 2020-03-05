@@ -12,7 +12,7 @@ public class ChoosePotMenuScript : MonoBehaviour {
 
 	private PotSpotScript currentPotSpot;
 
-	public List<GameObject> PotPrefabs;
+	// public List<GameObject> PotPrefabs;
 
 	void Start() {
 		MainInstance = this;
@@ -33,9 +33,6 @@ public class ChoosePotMenuScript : MonoBehaviour {
 
 	private void PopulateDropDown() {
 		List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
-
-		// TODO: choose pots from inventory instead
-		// IDEA: disable dropdown if inventory is empty
 
 		// foreach (GameObject potPrefab in PotPrefabs) {
 		// 	options.Add(new Dropdown.OptionData(potPrefab.name));
