@@ -63,7 +63,15 @@ public class ClickPotScript : MonoBehaviour {
 		}
 	}
 
+	public void RemovePlant() {
+		if (Plant == null)
+		{
+			return;
+		}
 
+		Destroy(Plant.gameObject);
+		Plant = null;
+	}
 
 	public static void TimeStep() {
 		TimeStep(5);

@@ -175,7 +175,11 @@ public class PlantMenuScript : MonoBehaviour {
 
 	public void Harvest() {
 		if (IsHarvestable()) {
-			currentPot.Plant.GrowthProgress -= currentPot.Plant.HarvastableAtSize;
+			if (currentPot.Plant.ConsumeOnHarvest) {
+				RemovePlant();
+			} else {
+				currentPot.Plant.GrowthProgress -= currentPot.Plant.HarvastableAtSize;
+			}
 			Inventory.State.Cash += currentPot.Plant.HarvestValue;
 		}
 		UpdateUI();
@@ -187,6 +191,10 @@ public class PlantMenuScript : MonoBehaviour {
 			&& currentPot.Plant.GrowthProgress > currentPot.Plant.HarvastableAtSize
 		;
 
+	}
+
+	public void RemovePlant() {
+		currentPot.RemovePlant();
 	}
 
 	public void DebugTimestep(float timeAmount) {
