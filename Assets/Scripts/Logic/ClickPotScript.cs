@@ -19,7 +19,7 @@ public class ClickPotScript : MonoBehaviour {
 	[Tooltip("How much a plant can grow in this pot (how much soil fits in it)")]
 	public float Size = 0; // max soil amount
 
-	public float StartSoilAmount = 0;
+	// public float StartSoilAmount = 0;
 	private float soilAmount;
 	public float SoilAmount {
 		get { return soilAmount; }
@@ -42,6 +42,7 @@ public class ClickPotScript : MonoBehaviour {
 
 	void Start() {
 		Pots.Add(this);
+		SoilAmount = Size;
 		// Pots.Add(gameObject);
 		// Debug.Log("pot init size: " + Size + ", soil: " + SoilAmount);
 
