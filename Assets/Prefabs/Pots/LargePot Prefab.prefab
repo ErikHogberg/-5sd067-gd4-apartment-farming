@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6488449048213710741}
   - component: {fileID: 7441676377491604898}
   - component: {fileID: 3647361542837985562}
+  - component: {fileID: 2137760776377432913}
   m_Layer: 0
   m_Name: LargePot Prefab
   m_TagString: Untagged
@@ -70,6 +71,20 @@ MonoBehaviour:
   StartSoilAmount: 0
   Plant: {fileID: 0}
   HasBeenWatered: 0
+--- !u!64 &2137760776377432913
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488449048213710738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8013395051581634243
 GameObject:
   m_ObjectHideFlags: 0
