@@ -39,7 +39,8 @@ public class InventoryState {
 			cash = value;
 			CashCounterScript.SetValueStatic(cash);
 		}
-	};
+	}
+	
 	public List<GameObject> Pots = new List<GameObject>();
 	public List<GameObject> Seeds = new List<GameObject>();
 
