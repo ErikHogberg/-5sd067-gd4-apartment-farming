@@ -66,6 +66,7 @@ MonoBehaviour:
   StartGrowthProgress: 0
   HarvastableAtSize: 25
   SizeReductionOnHarvest: 20
+  ConsumeOnHarvest: 1
   HarvestValue: 1
   Price: 0
   MenuName: Leafy Greens
@@ -199,7 +200,7 @@ PrefabInstance:
     - target: {fileID: 2517891475251968606, guid: 2f9d88d45a96ad0408067c346f8dddef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.208
+      value: 0.096
       objectReference: {fileID: 0}
     - target: {fileID: 2517891475251968606, guid: 2f9d88d45a96ad0408067c346f8dddef,
         type: 3}
@@ -359,12 +360,12 @@ PrefabInstance:
     - target: {fileID: 2517891475251968606, guid: 2f9d88d45a96ad0408067c346f8dddef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.32
+      value: -0.3379
       objectReference: {fileID: 0}
     - target: {fileID: 2517891475251968606, guid: 2f9d88d45a96ad0408067c346f8dddef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.14206
+      value: 0.030059993
       objectReference: {fileID: 0}
     - target: {fileID: 2517891475251968606, guid: 2f9d88d45a96ad0408067c346f8dddef,
         type: 3}
