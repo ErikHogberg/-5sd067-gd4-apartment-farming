@@ -95,6 +95,7 @@ public class PlantMenuScript : MonoBehaviour {
 
 	public void InspectPot(ClickPotScript pot) {
 
+		ChoosePotMenuScript.CloseStaticMenu();
 
 		if (InspectFadePanel != null) {
 			InspectFadePanel.StartFadeOut();
@@ -205,6 +206,7 @@ public class PlantMenuScript : MonoBehaviour {
 	public void RemovePlant() {
 		if (currentPot.Plant != null) {
 			currentPot.RemovePlant();
+			ClearObject();
 			UpdateUI();
 		} else {
 			// TODO: remove pot, close this menu
