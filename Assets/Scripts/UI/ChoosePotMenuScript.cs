@@ -25,6 +25,7 @@ public class ChoosePotMenuScript : MonoBehaviour {
 
 	public void OpenMenu(PotSpotScript potSpot) {
 		gameObject.SetActive(true);
+		PlantMenuScript.MainInstance.CloseMenu();
 
 		currentPotSpot = potSpot;
 		PopulateDropDown();

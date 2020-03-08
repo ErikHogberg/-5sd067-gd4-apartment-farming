@@ -66,6 +66,7 @@ MonoBehaviour:
   StartGrowthProgress: 0
   HarvastableAtSize: 0
   SizeReductionOnHarvest: 0
+  ConsumeOnHarvest: 1
   HarvestValue: 0
   Price: 0
   MenuName: Micro Greens
