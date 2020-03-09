@@ -23,7 +23,6 @@ public class InventoryEditorScript : MonoBehaviour {
 
 public static class Inventory {
 
-
 	public static InventoryState State;
 
 }
@@ -31,7 +30,17 @@ public static class Inventory {
 [Serializable]
 public class InventoryState {
 
-	public float Cash = 1000000f;
+	public float StartCash = 1000000f;
+
+	private float cash = 1000000f;
+	public float Cash {
+		get { return cash; }
+		set {
+			cash = value;
+			CashCounterScript.SetValueStatic(cash);
+		}
+	}
+	
 	public List<GameObject> Pots = new List<GameObject>();
 	public List<GameObject> Seeds = new List<GameObject>();
 
@@ -39,7 +48,7 @@ public class InventoryState {
 	public int DayLimit = 100;
 
 	public InventoryState() {
-
+		Cash = StartCash;
 	}
 
 	public void Reset() {

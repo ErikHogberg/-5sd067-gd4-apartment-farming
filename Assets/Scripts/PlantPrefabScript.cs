@@ -11,6 +11,8 @@ public class PlantPrefabScript : MonoBehaviour {
 
 	[Tooltip("How much growth the plant loses when harvested")]
 	public float SizeReductionOnHarvest;
+	[Tooltip("If plant is consumed/destroyed on harvest")]
+	public bool ConsumeOnHarvest = false;
 
 	[Tooltip("Value of each harvest yield (1 fruit)")]
 	public float HarvestValue;

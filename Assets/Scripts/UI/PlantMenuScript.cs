@@ -13,6 +13,7 @@ public class PlantMenuScript : MonoBehaviour {
 	public Text PlantAndWaterButtonText;
 	public Button AddSoilButton;
 	public Button HarvestButton;
+	public Text RemovePlantButtonText;
 
 	public FadePanelScript InspectFadePanel;
 
@@ -41,7 +42,7 @@ public class PlantMenuScript : MonoBehaviour {
 		ClearPot();
 	}
 
-	public void PopulateUI() {
+	public void UpdateUI() {
 
 		List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
 
@@ -74,6 +75,14 @@ public class PlantMenuScript : MonoBehaviour {
 			AddSoilButton.interactable = true;
 		}
 
+		HarvestButton.interactable = IsHarvestable();
+
+		if (currentPot.Plant != null) {
+			RemovePlantButtonText.text = "Remove Plant";
+		} else {
+			RemovePlantButtonText.text = "Remove Pot";
+		}
+
 	}
 
 	public static void ClearObject() {
@@ -86,6 +95,7 @@ public class PlantMenuScript : MonoBehaviour {
 
 	public void InspectPot(ClickPotScript pot) {
 
+		ChoosePotMenuScript.CloseStaticMenu();
 
 		if (InspectFadePanel != null) {
 			InspectFadePanel.StartFadeOut();
@@ -93,7 +103,7 @@ public class PlantMenuScript : MonoBehaviour {
 
 		// TODO: different actions for different plant states (empty, only soil, has plant)
 		currentPot = pot;
-		PopulateUI();
+		UpdateUI();
 		SetObject(currentPot);
 		gameObject.SetActive(true);
 		OnOpenMenuAction.Invoke();
@@ -144,13 +154,14 @@ public class PlantMenuScript : MonoBehaviour {
 		} else {
 			WaterPlant();
 		}
-		PopulateUI();
+		// UpdateUI();
 
 	}
 
 	public void WaterPlant() {
 		currentPot.HasBeenWatered = true;
-
+		UpdateUI();
+		WaterParticleScript.MainInstance.StartSpray();
 	}
 
 	public void PlantPlant() {
@@ -167,8 +178,39 @@ public class PlantMenuScript : MonoBehaviour {
 		Inventory.State.Seeds.RemoveAt(PlantMenuDropdown.value);
 		PlantMenuDropdown.value = 0;
 
+		UpdateUI();
 		// PopulateDropdown();
 		// CloseMenu();
+	}
+
+	public void Harvest() {
+		if (IsHarvestable()) {
+			if (currentPot.Plant.ConsumeOnHarvest) {
+				RemovePlant();
+			} else {
+				currentPot.Plant.GrowthProgress -= currentPot.Plant.HarvastableAtSize;
+			}
+			Inventory.State.Cash += currentPot.Plant.HarvestValue;
+		}
+		UpdateUI();
+	}
+
+	public bool IsHarvestable() {
+		return
+			currentPot.Plant != null
+			&& currentPot.Plant.GrowthProgress > currentPot.Plant.HarvastableAtSize
+		;
+
+	}
+
+	public void RemovePlant() {
+		if (currentPot.Plant != null) {
+			currentPot.RemovePlant();
+			ClearObject();
+			UpdateUI();
+		} else {
+			// TODO: remove pot, close this menu
+		}
 	}
 
 	public void DebugTimestep(float timeAmount) {
