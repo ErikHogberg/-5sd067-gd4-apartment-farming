@@ -84,7 +84,7 @@ public class PlantPrefabScript : MonoBehaviour {
 			belowMax = false;
 		}
 		GrowthProgress = resultSize;
-		Debug.Log("growth: " + GrowthProgress + ", max: " + maxSize);
+		// Debug.Log("growth: " + GrowthProgress + ", max: " + maxSize);
 		return belowMax;
 	}
 
