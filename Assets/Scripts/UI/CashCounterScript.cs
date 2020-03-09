@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CashCounterScript : MonoBehaviour {
 
-	public static CashCounterScript MainInstance;
+	public static List<CashCounterScript> MainInstances = new List<CashCounterScript>();
 	private static float initValue = 0;
 
 	private Text text;
@@ -14,7 +14,7 @@ public class CashCounterScript : MonoBehaviour {
 	public string Suffix = "kr";
 
 	private void Start() {
-		MainInstance = this;
+		MainInstances.Add(this);
 		text = GetComponent<Text>();
 		SetValue(initValue);
 	}
@@ -24,10 +24,9 @@ public class CashCounterScript : MonoBehaviour {
 	}
 
 	public static void SetValueStatic(float value) {
-		if (MainInstance != null) {
-			MainInstance.SetValue(value);
-		} else {
-			initValue = value;
+		initValue = value;
+		foreach (CashCounterScript instance in MainInstances) {
+			instance.SetValue(value);
 		}
 	}
 
