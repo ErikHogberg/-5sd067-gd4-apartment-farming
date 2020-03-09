@@ -218,6 +218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TomatoSeed Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5209480384137453129, guid: 22b63368b25327b4b8691959a34cf135,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9083922171632692314, guid: 22b63368b25327b4b8691959a34cf135,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -536,6 +536,7 @@ MonoBehaviour:
   PlantAndWaterButtonText: {fileID: 620491806521600004}
   AddSoilButton: {fileID: 620491806047281969}
   HarvestButton: {fileID: 620491806352605069}
+  RemovePlantButtonText: {fileID: 225213557232890782}
   InspectFadePanel: {fileID: 0}
   currentPot: {fileID: 0}
   OnOpenMenuAction:

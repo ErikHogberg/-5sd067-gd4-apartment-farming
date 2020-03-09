@@ -232,6 +232,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChiliSeed Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6612908995133889272, guid: a73247e8a72548843a226eea66176dd0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7898922772001597675, guid: a73247e8a72548843a226eea66176dd0,
         type: 3}
       propertyPath: m_LocalPosition.x
