@@ -7,7 +7,8 @@ public class DayCounterUIScript : MonoBehaviour {
 
 	public static DayCounterUIScript MainInstance;
 
-	private static float initValue = 0;
+	private static float dayInitValue = 0;
+	private static float dayLimitInitValue = 0;
 
 	private Text text;
 
@@ -18,17 +19,19 @@ public class DayCounterUIScript : MonoBehaviour {
 	private void Start() {
 		MainInstance = this;
 		text = GetComponent<Text>();
-		SetValue(initValue);
+		SetValue(dayInitValue, dayLimitInitValue);
 	}
 
-	public void SetValue(float value) {
-		text.text = Prefix + value + Infix + Inventory.State.DayLimit + Suffix;
+	public void SetValue(float dayValue, float dayLimitValue) {
+		text.text = Prefix + dayValue + Infix + dayLimitValue + Suffix;
 	}
 
-	public static void SetValueStatic(float value) {
-		initValue = value;
+	public static void SetValueStatic(float dayValue, float dayLimitValue) {
+		dayInitValue = dayValue;
+		dayLimitInitValue = dayLimitValue;
+		
 		if (MainInstance != null) {
-			MainInstance.SetValue(value);
+			MainInstance.SetValue(dayValue, dayLimitValue);
 		}
 	}
 }
