@@ -40,15 +40,25 @@ public class InventoryState {
 			CashCounterScript.SetValueStatic(cash);
 		}
 	}
-	
+
 	public List<GameObject> Pots = new List<GameObject>();
 	public List<GameObject> Seeds = new List<GameObject>();
 
-	public int DaysPassed = 0;
 	public int DayLimit = 100;
+	
+	private int daysPassed = 0;
+	public int DaysPassed {
+		get { return daysPassed; }
+		set {
+			daysPassed = value;
+			DayCounterUIScript.SetValueStatic(daysPassed, DayLimit);
+		}
+	}
 
 	public InventoryState() {
 		Cash = StartCash;
+		DayCounterUIScript.SetValueStatic(DaysPassed, DayLimit);
+		
 	}
 
 	public void Reset() {
