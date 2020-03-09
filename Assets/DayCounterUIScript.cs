@@ -3,31 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CashCounterScript : MonoBehaviour {
+public class DayCounterUIScript : MonoBehaviour {
 
-	public static List<CashCounterScript> MainInstances = new List<CashCounterScript>();
+	public static DayCounterUIScript MainInstance;
+
 	private static float initValue = 0;
 
 	private Text text;
 
-	public string Prefix = "Cash: ";
-	public string Suffix = "kr";
+	public string Prefix = "Day ";
+	public string Infix = " out of ";
+	public string Suffix = "!";
 
 	private void Start() {
-		MainInstances.Add(this);
+		MainInstance = this;
 		text = GetComponent<Text>();
 		SetValue(initValue);
 	}
 
 	public void SetValue(float value) {
-		text.text = Prefix + value + Suffix;
+		text.text = Prefix + value + Infix + Inventory.State.DayLimit + Suffix;
 	}
 
 	public static void SetValueStatic(float value) {
 		initValue = value;
-		foreach (CashCounterScript instance in MainInstances) {
-			instance.SetValue(value);
+		if (MainInstance != null) {
+			MainInstance.SetValue(value);
 		}
 	}
-
 }
