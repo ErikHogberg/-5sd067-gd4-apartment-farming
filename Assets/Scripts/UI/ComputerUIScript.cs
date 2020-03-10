@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComputerUIScript : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class ComputerUIScript : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public static ComputerUIScript MainInstance;
+
+	void Start() {
+		MainInstance = this;
+        CloseMenu();
+	}
+
+	public void OpenMenu() {
+		gameObject.SetActive(true);
+	}
+
+	public void CloseMenu() {
+		gameObject.SetActive(false);
+	}
+
 }

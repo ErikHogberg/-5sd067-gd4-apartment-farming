@@ -18,6 +18,8 @@ public class ClickPotScript : MonoBehaviour {
 	// public float GrowthProgress; // less than 0 means no soil
 	[Tooltip("How much a plant can grow in this pot (how much soil fits in it)")]
 	public float Size = 0; // max soil amount
+	[Tooltip("How much the pot costs to buy")]
+	public float Price = 1; // max soil amount
 
 	// public float StartSoilAmount = 0;
 	private float soilAmount;
