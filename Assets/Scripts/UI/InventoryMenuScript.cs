@@ -21,10 +21,6 @@ public class InventoryMenuScript : MonoBehaviour {
 	}
 
 	public void PopulateMenu() {
-		// TODO: get soil instead if pot is not filled
-		// TODO: get seeds from inventory if there is soil
-		// TODO: water plant if plant exists
-		// TODO: harvest plant if ready to harverst
 
 		string outText = "";
 
@@ -41,8 +37,8 @@ public class InventoryMenuScript : MonoBehaviour {
 			;
 		}
 
-
 		TextBox.text = outText;
+
 	}
 
 	public void CloseMenu() {

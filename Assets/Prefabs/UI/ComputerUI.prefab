@@ -844,7 +844,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2299077007986812046}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524759651380726229}
+        m_MethodName: BuySeed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4063398361071008933, guid: 8d64f5a0394ca7145aafb716645011a1,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2299077007991660963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1254,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2299077008082891882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524759651380726229}
+        m_MethodName: BuyPot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6488449048213710738, guid: 6f4f6103458015b4ca40012178d8b6d9,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2299077008118092626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,6 +1355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2299077008122597171}
+  - component: {fileID: 524759651380726229}
   m_Layer: 5
   m_Name: Farmazon
   m_TagString: Untagged
@@ -1365,6 +1390,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &524759651380726229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2299077008122597170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629695851977d3f4cb55e37bcdb31ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2299077008138254782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,7 +2194,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2299077008241249438}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524759651380726229}
+        m_MethodName: BuySeed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4063398361071008933, guid: 737e928164717204badea64134502bc7,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2299077008244567855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,7 +2324,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2299077008244567850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524759651380726229}
+        m_MethodName: BuySeed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4063398361071008933, guid: 67638adafeaeca740b2ee970267a74a2,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2299077008296616810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4715,7 +4776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2299077008771987785}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524759651380726229}
+        m_MethodName: BuyPot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6488449048213710738, guid: 6f17425e3f8e8054e8a6d71ca5a1d778,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2299077008781121019
 GameObject:
   m_ObjectHideFlags: 0
@@ -5516,7 +5589,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2299077009133979216}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524759651380726229}
+        m_MethodName: BuySeed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4063398361071008933, guid: ecf7fa7e2ec766c439e5b797a2a5594c,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2299077009208894894
 GameObject:
   m_ObjectHideFlags: 0
@@ -6896,7 +6981,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2299077009423629936}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524759651380726229}
+        m_MethodName: BuySeed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4063398361071008933, guid: 4499269632c14354a94e20c0c60b249e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2299077009431567011
 GameObject:
   m_ObjectHideFlags: 0
@@ -7955,7 +8052,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2299077009723880508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524759651380726229}
+        m_MethodName: BuyPot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6488449048213710738, guid: 9fc360869b25d6b4c8331075c0aaf14e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2299077009745616454
 GameObject:
   m_ObjectHideFlags: 0
