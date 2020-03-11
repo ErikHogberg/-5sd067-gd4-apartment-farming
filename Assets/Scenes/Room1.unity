@@ -7215,7 +7215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetGlobals: 0
   State:
-    StartCash: 1000000
+    StartCash: 100
     Pots: []
     Seeds: []
     DayLimit: 100
