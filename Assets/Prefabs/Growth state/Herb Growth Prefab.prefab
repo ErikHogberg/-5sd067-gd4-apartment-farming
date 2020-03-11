@@ -67,8 +67,8 @@ MonoBehaviour:
   HarvastableAtSize: 7
   SizeReductionOnHarvest: 10
   ConsumeOnHarvest: 1
-  HarvestValue: 1
-  Price: 0
+  HarvestValue: 15
+  Price: 5
   MenuName: Persley
   SeedBagPrefab: {fileID: 1442895556179829266, guid: 6f343dac09902794aa420ff6cbfc4a38,
     type: 3}

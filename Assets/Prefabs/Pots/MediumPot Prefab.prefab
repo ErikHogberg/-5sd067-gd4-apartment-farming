@@ -81,7 +81,7 @@ MonoBehaviour:
   MenuName: Medium Pot
   Description: Nice all-rounder, fun at parties
   Size: 30
-  StartSoilAmount: 0
+  Price: 200
   Plant: {fileID: 0}
   HasBeenWatered: 0
 --- !u!1 &8013395051581634243

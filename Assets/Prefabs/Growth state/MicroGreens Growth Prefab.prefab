@@ -67,8 +67,8 @@ MonoBehaviour:
   HarvastableAtSize: 14
   SizeReductionOnHarvest: 0
   ConsumeOnHarvest: 1
-  HarvestValue: 0
-  Price: 0
+  HarvestValue: 20
+  Price: 10
   MenuName: Micro Greens
   SeedBagPrefab: {fileID: 1442895556179829266, guid: 5eb3577097ad033498362e57bedf29a5,
     type: 3}

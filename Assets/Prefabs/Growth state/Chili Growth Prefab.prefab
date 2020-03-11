@@ -64,11 +64,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGrowthProgress: 0
-  HarvastableAtSize: 60
+  HarvastableAtSize: 50
   SizeReductionOnHarvest: 5
   ConsumeOnHarvest: 0
-  HarvestValue: 1
-  Price: 0
+  HarvestValue: 100
+  Price: 30
   MenuName: Chili
   SeedBagPrefab: {fileID: 1442895556179829266, guid: 19e57d13d585c4b45a8e4ebb488a027a,
     type: 3}
