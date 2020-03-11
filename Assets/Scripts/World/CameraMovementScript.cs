@@ -18,6 +18,7 @@ public class CameraMovementScript : MonoBehaviour {
 	public struct CameraSpot {
 		public Transform Spot;
 		public CameraSpotType Type;
+		public bool IsLaptop;
 	}
 
 	private static CameraMovementScript mainInstance = null;
@@ -116,11 +117,20 @@ public class CameraMovementScript : MonoBehaviour {
 			}
 		}
 
+		if (
+			CameraSpots[CurrentSpot].IsLaptop 
+			&& transform.position == CameraSpots[CurrentSpot].Spot.transform.position
+			&& transform.rotation == CameraSpots[CurrentSpot].Spot.transform.rotation
+		) {
+			ComputerUIScript.MainInstance.OpenMenu();
+		}
+
 	}
 
 	private static void ClearSelected() {
 		PlantMenuScript.MainInstance.CloseMenu();
 		ChoosePotMenuScript.CloseStaticMenu();
+		ComputerUIScript.MainInstance.CloseMenu();
 	}
 
 	private void SetDistance(int targetIndex) {

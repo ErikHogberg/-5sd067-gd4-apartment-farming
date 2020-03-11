@@ -15,9 +15,9 @@ public class FarmazonUIScript : MonoBehaviour
 		InventoryMenuScript.MainInstance.PopulateMenu();
 	}
 
-	public void BuyPot(GameObject seedPrefab) {
-		Inventory.State.Cash -= seedPrefab.GetComponent<PlantPrefabScript>().Price;
-		Inventory.State.Pots.Add(seedPrefab);
+	public void BuyPot(GameObject potPrefab) {
+		Inventory.State.Cash -= potPrefab.GetComponent<ClickPotScript>().Price;
+		Inventory.State.Pots.Add(potPrefab);
 		InventoryMenuScript.MainInstance.PopulateMenu();
 	}
 

@@ -382,28 +382,40 @@ MonoBehaviour:
   CameraSpots:
   - Spot: {fileID: 2429304923936463187}
     Type: 0
+    IsLaptop: 0
   - Spot: {fileID: 2429304924313320473}
     Type: 0
+    IsLaptop: 1
   - Spot: {fileID: 2429304925034325872}
     Type: 1
+    IsLaptop: 0
   - Spot: {fileID: 2429304924044830365}
     Type: 1
+    IsLaptop: 0
   - Spot: {fileID: 2429304924101700442}
     Type: 1
+    IsLaptop: 0
   - Spot: {fileID: 2429304925686256160}
     Type: 0
+    IsLaptop: 0
   - Spot: {fileID: 2429304924255960991}
     Type: 1
+    IsLaptop: 0
   - Spot: {fileID: 2429304924146899885}
     Type: 1
+    IsLaptop: 0
   - Spot: {fileID: 2429304925766245526}
     Type: 1
+    IsLaptop: 0
   - Spot: {fileID: 2429304924065662004}
     Type: 1
+    IsLaptop: 0
   - Spot: {fileID: 2429304924266194872}
     Type: 0
+    IsLaptop: 0
   - Spot: {fileID: 2429304924601007589}
     Type: 0
+    IsLaptop: 0
 --- !u!114 &3609971489052616894
 MonoBehaviour:
   m_ObjectHideFlags: 0
