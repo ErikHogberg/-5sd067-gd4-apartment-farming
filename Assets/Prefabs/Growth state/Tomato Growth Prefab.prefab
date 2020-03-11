@@ -67,8 +67,8 @@ MonoBehaviour:
   HarvastableAtSize: 20
   SizeReductionOnHarvest: 10
   ConsumeOnHarvest: 0
-  HarvestValue: 1
-  Price: 1
+  HarvestValue: 55
+  Price: 30
   MenuName: Tomatoes
   SeedBagPrefab: {fileID: 1442895556179829266, guid: 3cc5644cbeaa94d418476fbdf9723e25,
     type: 3}

@@ -82,6 +82,7 @@ MonoBehaviour:
   MenuName: Large Pot
   Description: Thicc clay boi
   Size: 50
+  Price: 300
   Plant: {fileID: 0}
   HasBeenWatered: 0
 --- !u!64 &2137760776377432913

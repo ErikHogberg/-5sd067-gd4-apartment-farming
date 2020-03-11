@@ -64,11 +64,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGrowthProgress: 0
-  HarvastableAtSize: 30
+  HarvastableAtSize: 15
   SizeReductionOnHarvest: 20
   ConsumeOnHarvest: 1
-  HarvestValue: 1
-  Price: 0
+  HarvestValue: 40
+  Price: 20
   MenuName: Leafy Greens
   SeedBagPrefab: {fileID: 1442895556179829266, guid: 30ac8941182776841a82345494a041d7,
     type: 3}
