@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FarmazonUIScript : MonoBehaviour {
-	void Start() {
 
-	}
+	public string SoundEffect;
 
 	public void BuySeed(GameObject seedPrefab) {
 		PlantPrefabScript seed = seedPrefab.GetComponent<PlantPrefabScript>();
@@ -27,6 +26,10 @@ public class FarmazonUIScript : MonoBehaviour {
 		Inventory.State.Cash -= pot.Price;
 		Inventory.State.Pots.Add(potPrefab);
 		InventoryMenuScript.MainInstance.PopulateMenu();
+
+		if (Inventory.State.EnableSound) {
+			AudioManager.instance.Play(SoundEffect);
+		}
 	}
 
 }

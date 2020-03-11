@@ -19,6 +19,9 @@ public class PlantMenuScript : MonoBehaviour {
 
 	public ClickPotScript currentPot;
 
+	public string PlantSoundEffect;
+	public string HarvestSoundEffect;
+	public string RemoveSoundEffect;
 
 	public UnityEvent OnOpenMenuAction;
 
@@ -135,8 +138,8 @@ public class PlantMenuScript : MonoBehaviour {
 			}
 
 			spawnedObject = Instantiate(
-				prefabToInstantiate, 
-				spawnLocation, 
+				prefabToInstantiate,
+				spawnLocation,
 				Camera.main.transform.rotation,
 				Camera.main.transform
 			);
@@ -184,6 +187,10 @@ public class PlantMenuScript : MonoBehaviour {
 		Inventory.State.Seeds.RemoveAt(PlantMenuDropdown.value);
 		PlantMenuDropdown.value = 0;
 
+		if (Inventory.State.EnableSound) {
+			AudioManager.instance.Play(PlantSoundEffect);
+		}
+
 		UpdateUI();
 		// PopulateDropdown();
 		// CloseMenu();
@@ -196,6 +203,11 @@ public class PlantMenuScript : MonoBehaviour {
 			} else {
 				currentPot.Plant.GrowthProgress -= currentPot.Plant.HarvastableAtSize;
 			}
+
+			if (Inventory.State.EnableSound) {
+				AudioManager.instance.Play(HarvestSoundEffect);
+			}
+
 			Inventory.State.Cash += currentPot.Plant.HarvestValue;
 		}
 		UpdateUI();
@@ -214,6 +226,9 @@ public class PlantMenuScript : MonoBehaviour {
 			currentPot.RemovePlant();
 			ClearObject();
 			UpdateUI();
+			if (Inventory.State.EnableSound) {
+				AudioManager.instance.Play(RemoveSoundEffect);
+			}
 		} else {
 			// TODO: remove pot, close this menu
 		}

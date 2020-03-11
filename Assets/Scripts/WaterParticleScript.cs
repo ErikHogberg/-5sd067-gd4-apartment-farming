@@ -11,6 +11,8 @@ public class WaterParticleScript : MonoBehaviour {
 
 	private ParticleSystem WaterParticles;
 
+	public string SoundEffect;
+
 	private void Start() {
 		MainInstance = this;
 		WaterParticles = GetComponent<ParticleSystem>();
@@ -28,6 +30,9 @@ public class WaterParticleScript : MonoBehaviour {
 	public void StartSpray() {
 		// time = SprayTime;
 		WaterParticles.Play();
+		if (Inventory.State.EnableSound) {
+			AudioManager.instance.Play(SoundEffect);
+		}
 	}
 
 	// public void StopSpray() {
