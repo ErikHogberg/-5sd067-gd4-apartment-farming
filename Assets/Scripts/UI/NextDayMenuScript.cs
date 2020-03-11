@@ -25,7 +25,6 @@ public class NextDayMenuScript : MonoBehaviour {
 	public float CashCostPerDay = 0f;
 
 
-
 	void Start() {
 
 		gameObject.SetActive(false);
@@ -78,7 +77,11 @@ public class NextDayMenuScript : MonoBehaviour {
 	public void SetSliderToNextEvent() {
 		(bool anyPlantsHarvestableInFuture, float daysUntilClosestHarvest) = GetDaysToNextEvent();
 		if (anyPlantsHarvestableInFuture) {
-			DaySlider.value = daysUntilClosestHarvest;
+			if (DaySlider.maxValue < daysUntilClosestHarvest) {
+				DaySlider.value = DaySlider.maxValue;
+			} else {
+				DaySlider.value = daysUntilClosestHarvest;
+			}
 		}
 	}
 
