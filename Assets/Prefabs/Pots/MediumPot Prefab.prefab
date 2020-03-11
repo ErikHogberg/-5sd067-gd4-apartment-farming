@@ -82,6 +82,7 @@ MonoBehaviour:
   Description: Nice all-rounder, fun at parties
   Size: 30
   Price: 200
+  PlacePotSoundEffect: PPmedium
   Plant: {fileID: 0}
   HasBeenWatered: 0
 --- !u!1 &8013395051581634243
