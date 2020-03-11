@@ -64,10 +64,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGrowthProgress: 0
-  HarvastableAtSize: 7
+  HarvastableAtSize: 3
   SizeReductionOnHarvest: 10
   ConsumeOnHarvest: 0
-  HarvestValue: 5
+  HarvestValue: 6
   Price: 30
   MenuName: Persley
   SeedBagPrefab: {fileID: 1442895556179829266, guid: 6f343dac09902794aa420ff6cbfc4a38,
