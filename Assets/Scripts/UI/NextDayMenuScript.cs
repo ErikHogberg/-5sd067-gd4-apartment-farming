@@ -24,7 +24,7 @@ public class NextDayMenuScript : MonoBehaviour {
 
 	public float CashCostPerDay = 0f;
 
-	
+
 
 	void Start() {
 
@@ -48,7 +48,12 @@ public class NextDayMenuScript : MonoBehaviour {
 		WaterText.gameObject.SetActive(!allPlantsWatered);
 		EndDayButton.interactable = allPlantsWatered;
 
-		DailyExpenseText.text = DailyExpenseTextPrefix + CashCostPerDay;
+		if (CashCostPerDay > 0) {
+			DailyExpenseText.gameObject.SetActive(true);
+			DailyExpenseText.text = DailyExpenseTextPrefix + CashCostPerDay;
+		} else {
+			DailyExpenseText.gameObject.SetActive(false);
+		}
 
 	}
 
