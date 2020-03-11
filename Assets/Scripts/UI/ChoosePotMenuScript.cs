@@ -73,6 +73,10 @@ public class ChoosePotMenuScript : MonoBehaviour {
 		// 	currentPotSpot.transform.parent
 		// );
 
+		if (Inventory.State.Pots.Count < PotMenuDropdown.value - 1) {
+			return;
+		}
+
 		GameObject potToPlace = Inventory.State.Pots[PotMenuDropdown.value];
 
 		Transform spawnTranform = currentPotSpot.SpawnTransform;

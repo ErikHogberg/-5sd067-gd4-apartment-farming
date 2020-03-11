@@ -18,16 +18,18 @@ public class NextDayMenuScript : MonoBehaviour {
 	public Text WaterText;
 	public Button NextEventButton;
 	public Text NextEventDayText;
+	public Text DailyExpenseText;
 
-	public Scene nextScene; // IDEA: stay in same scene instead, make new ui state for end screen?
+	private string DailyExpenseTextPrefix;
+
+	public float CashCostPerDay = 0f;
+
+	
 
 	void Start() {
 
 		gameObject.SetActive(false);
-
-	}
-
-	void Update() {
+		DailyExpenseTextPrefix = DailyExpenseText.text;
 
 	}
 
@@ -45,6 +47,8 @@ public class NextDayMenuScript : MonoBehaviour {
 		bool allPlantsWatered = CheckAllWatered();
 		WaterText.gameObject.SetActive(!allPlantsWatered);
 		EndDayButton.interactable = allPlantsWatered;
+
+		DailyExpenseText.text = DailyExpenseTextPrefix + CashCostPerDay;
 
 	}
 
@@ -111,6 +115,8 @@ public class NextDayMenuScript : MonoBehaviour {
 			GameOverUIParentScript.MainInstance.OpenMenu();
 			GameOverUIScript.MainInstance.OpenMenu();
 		}
+
+		Inventory.State.Cash -= CashCostPerDay * DaySlider.value;
 	}
 
 }
