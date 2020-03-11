@@ -17,6 +17,8 @@ public class InventoryMenuScript : MonoBehaviour {
 
 	public void OpenMenu() {
 		PopulateMenu();
+		PlantMenuScript.MainInstance.CloseMenu();
+		ChoosePotMenuScript.MainInstance.CloseMenu();
 		gameObject.SetActive(true);
 	}
 
