@@ -7140,6 +7140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetGlobals: 0
   State:
+    EnableSound: 0
     StartCash: 1000
     Pots: []
     Seeds: []
