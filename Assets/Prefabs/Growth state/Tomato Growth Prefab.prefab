@@ -64,11 +64,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGrowthProgress: 0
-  HarvastableAtSize: 20
+  HarvastableAtSize: 50
   SizeReductionOnHarvest: 10
   ConsumeOnHarvest: 0
-  HarvestValue: 1
-  Price: 1
+  HarvestValue: 75
+  Price: 30
   MenuName: Tomatoes
   SeedBagPrefab: {fileID: 1442895556179829266, guid: 3cc5644cbeaa94d418476fbdf9723e25,
     type: 3}
@@ -76,9 +76,9 @@ MonoBehaviour:
   GrowthStates:
   - GrowthValue: 0
     Prefab: {fileID: 8510118352040745318}
-  - GrowthValue: 10
+  - GrowthValue: 25
     Prefab: {fileID: 8510118351380163267}
-  - GrowthValue: 20
+  - GrowthValue: 50
     Prefab: {fileID: 8510118351943915689}
 --- !u!1 &8510118351380163267
 GameObject:

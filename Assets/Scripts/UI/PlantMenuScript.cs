@@ -128,12 +128,19 @@ public class PlantMenuScript : MonoBehaviour {
 			GameObject prefabToInstantiate;//pot.PrefabToInstantiate;
 			if (pot.Plant != null) {
 				prefabToInstantiate = pot.Plant.SeedBagPrefab;
-			} else {
+			} else if (Inventory.State.Seeds.Count - 1 > PlantMenuDropdown.value) {
 				PlantPrefabScript menuPlant = Inventory.State.Seeds[PlantMenuDropdown.value].GetComponent<PlantPrefabScript>();
 				prefabToInstantiate = menuPlant.SeedBagPrefab;
+			} else {
+				return;
 			}
 
-			spawnedObject = Instantiate(prefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
+			spawnedObject = Instantiate(
+				prefabToInstantiate, 
+				spawnLocation, 
+				Camera.main.transform.rotation,
+				Camera.main.transform
+			);
 			// Debug.Log("clicked pot size: " + Size + ", soil: " + SoilAmount);
 		}
 	}
