@@ -62,7 +62,7 @@ public class NextDayMenuScript : MonoBehaviour {
 		float closestEvent = float.MaxValue;
 
 		foreach (ClickPotScript pot in ClickPotScript.Pots) {
-			if (pot.Plant != null && pot.Plant.HarvastableAtSize < pot.SoilAmount) {
+			if (pot.Plant != null && pot.Plant.HarvastableAtSize <= pot.SoilAmount) {
 				float daysUntilHarvest = pot.Plant.HarvastableAtSize - pot.Plant.GrowthProgress;
 				if (daysUntilHarvest > 0 && daysUntilHarvest < closestEvent) {
 					closestEvent = daysUntilHarvest;
