@@ -82,16 +82,6 @@ public class NextDayMenuScript : MonoBehaviour {
 		return true;
 	}
 
-	public void NextDay() {
-		// TODO: get slider value
-		// TODO: fade out
-		// TODO: increase time
-	}
-
-	public void SetSliderToRecommended() {
-		// DaySlider.value
-	}
-
 	public void CloseMenu() {
 		gameObject.SetActive(false);
 	}
@@ -116,6 +106,11 @@ public class NextDayMenuScript : MonoBehaviour {
 
 	public void ApplyDayChange() {
 		ClickPotScript.TimeStep(DaySlider.value);
+		Inventory.State.DaysPassed += (int)DaySlider.value;
+		if (Inventory.State.DaysPassed > Inventory.State.DayLimit) {
+			GameOverUIParentScript.MainInstance.OpenMenu();
+			GameOverUIScript.MainInstance.OpenMenu();
+		}
 	}
 
 }

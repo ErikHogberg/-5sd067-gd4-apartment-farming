@@ -103,10 +103,10 @@ public class PlantMenuScript : MonoBehaviour {
 
 		// TODO: different actions for different plant states (empty, only soil, has plant)
 		currentPot = pot;
-		UpdateUI();
 		SetObject(currentPot);
 		gameObject.SetActive(true);
 		OnOpenMenuAction.Invoke();
+		UpdateUI();
 
 		// TODO: water button, disable if watered already?
 
@@ -198,7 +198,7 @@ public class PlantMenuScript : MonoBehaviour {
 	public bool IsHarvestable() {
 		return
 			currentPot.Plant != null
-			&& currentPot.Plant.GrowthProgress > currentPot.Plant.HarvastableAtSize
+			&& currentPot.Plant.GrowthProgress >= currentPot.Plant.HarvastableAtSize
 		;
 
 	}
