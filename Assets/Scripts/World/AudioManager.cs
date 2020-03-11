@@ -29,12 +29,12 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void Start() {
-		Scene currentS = SceneManager.GetActiveScene();
-		if (currentS.name != "Menu") {
-			PlayMusic(1);
-		} else {
-			PlayMusic(0);
-		}
+		// Scene currentS = SceneManager.GetActiveScene();
+		// if (currentS.name != "Menu") {
+		// 	PlayMusic(1);
+		// } else {
+		// 	PlayMusic(0);
+		// }
 	}
 
 	public void Play(string name) {
