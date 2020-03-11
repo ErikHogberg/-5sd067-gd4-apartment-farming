@@ -30,9 +30,9 @@ public static class Inventory {
 [Serializable]
 public class InventoryState {
 
-	public float StartCash = 1000000f;
+	public float StartCash = 1000f;
 
-	private float cash = 1000000f;
+	private float cash = 0f;
 	public float Cash {
 		get { return cash; }
 		set {
@@ -58,7 +58,7 @@ public class InventoryState {
 	public InventoryState() {
 		Cash = StartCash;
 		DayCounterUIScript.SetValueStatic(DaysPassed, DayLimit);
-		
+		// Debug.Log("Called inventory init! " + StartCash );
 	}
 
 	public void Reset() {
