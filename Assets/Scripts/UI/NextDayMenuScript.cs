@@ -19,15 +19,11 @@ public class NextDayMenuScript : MonoBehaviour {
 	public Button NextEventButton;
 	public Text NextEventDayText;
 
-	public Scene nextScene; // IDEA: stay in same scene instead, make new ui state for end screen?
+	public float CashCostPerDay = 0f;
 
 	void Start() {
 
 		gameObject.SetActive(false);
-
-	}
-
-	void Update() {
 
 	}
 
@@ -111,6 +107,8 @@ public class NextDayMenuScript : MonoBehaviour {
 			GameOverUIParentScript.MainInstance.OpenMenu();
 			GameOverUIScript.MainInstance.OpenMenu();
 		}
+
+		Inventory.State.Cash -= CashCostPerDay * DaySlider.value;
 	}
 
 }
