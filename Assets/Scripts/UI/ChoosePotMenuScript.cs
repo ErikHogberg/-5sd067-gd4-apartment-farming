@@ -11,7 +11,6 @@ public class ChoosePotMenuScript : MonoBehaviour {
 
 	private PotSpotScript currentPotSpot;
 
-	public bool EnableSound = false;
 
 	void Start() {
 		MainInstance = this;
@@ -76,7 +75,7 @@ public class ChoosePotMenuScript : MonoBehaviour {
 			spawnTranform.parent // TODO: better parent object
 		);
 
-		if (EnableSound) {
+		if (Inventory.State.EnableSound) {
 			AudioManager.instance.Play(
 				potToPlace.GetComponent<ClickPotScript>().PlacePotSoundEffect
 			);
