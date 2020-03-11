@@ -5972,51 +5972,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
-        type: 3}
-      propertyPath: Sounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
-        type: 3}
-      propertyPath: Sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9b15ef53c91505b4ca8c9a3569257646, type: 3}
-    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
-        type: 3}
-      propertyPath: Sounds.Array.data[0].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
-        type: 3}
-      propertyPath: Sounds.Array.data[0].Name
-      value: Theme
-      objectReference: {fileID: 0}
-    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
-        type: 3}
-      propertyPath: Sounds.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
-        type: 3}
-      propertyPath: Sounds.Array.data[1].Name
-      value: Theme
-      objectReference: {fileID: 0}
-    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
-        type: 3}
-      propertyPath: Sounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9b15ef53c91505b4ca8c9a3569257646, type: 3}
-    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
-        type: 3}
-      propertyPath: Sounds.Array.data[1].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
-        type: 3}
-      propertyPath: Sounds.Array.data[1].loop
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6844457106032530672, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
         type: 3}
       propertyPath: m_Name

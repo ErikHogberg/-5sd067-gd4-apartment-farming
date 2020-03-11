@@ -101,14 +101,13 @@ public class PlantMenuScript : MonoBehaviour {
 			InspectFadePanel.StartFadeOut();
 		}
 
-		// TODO: different actions for different plant states (empty, only soil, has plant)
 		currentPot = pot;
 		SetObject(currentPot);
 		gameObject.SetActive(true);
+		ChoosePotMenuScript.MainInstance.CloseMenu();
+		InventoryMenuScript.MainInstance.CloseMenu();
 		OnOpenMenuAction.Invoke();
 		UpdateUI();
-
-		// TODO: water button, disable if watered already?
 
 	}
 

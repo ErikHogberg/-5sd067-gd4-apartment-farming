@@ -44,63 +44,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sounds:
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
+  - Name: Main theme
+    clip: {fileID: 8300000, guid: 9b15ef53c91505b4ca8c9a3569257646, type: 3}
+    volume: 1
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - Name: Ambience
+    clip: {fileID: 8300000, guid: 0a9527bbcc0ba7f43bdf5bd46d2efb42, type: 3}
+    volume: 0.28
+    pitch: 0
+    loop: 1
+    source: {fileID: 0}
+  - Name: Harvest sound
+    clip: {fileID: 8300000, guid: 0d701e1a3c6877a44ab3fd5636330d66, type: 3}
+    volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
+  - Name: Cash register sound
+    clip: {fileID: 8300000, guid: a4afd688428ddf04a85ddb76adcfb73a, type: 3}
+    volume: 0.53
     pitch: 0
     loop: 0
     source: {fileID: 0}
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
+  - Name: Pop sound
+    clip: {fileID: 8300000, guid: 0abeb5c29d8b38d42a2f27d8138f08e8, type: 3}
+    volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
+  - Name: Rustleplants
+    clip: {fileID: 8300000, guid: b3557e7d8c3b9a94aaf30c474b6be0eb, type: 3}
+    volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
+  - Name: Seed  sound
+    clip: {fileID: 8300000, guid: efd0ca15f5825254b903af9321cf7b3c, type: 3}
+    volume: 1
     pitch: 0
     loop: 0
     source: {fileID: 0}
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
+  - Name: Watering
+    clip: {fileID: 8300000, guid: ba9b1327e4c5f79498a2a61a626c189b, type: 3}
+    volume: 0.17
     pitch: 0
     loop: 0
     source: {fileID: 0}
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - Name: PPsmall
+    clip: {fileID: 8300000, guid: d970af6af88d5dc4f83cb5bd75c7857c, type: 3}
+    volume: 1
+    pitch: 2.45
     loop: 0
     source: {fileID: 0}
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - Name: PPmedium
+    clip: {fileID: 8300000, guid: d970af6af88d5dc4f83cb5bd75c7857c, type: 3}
+    volume: 1
+    pitch: 1.47
     loop: 0
     source: {fileID: 0}
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
-    source: {fileID: 0}
-  - Name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - Name: PPlarge
+    clip: {fileID: 8300000, guid: d970af6af88d5dc4f83cb5bd75c7857c, type: 3}
+    volume: 1
+    pitch: 0.86
     loop: 0
     source: {fileID: 0}
