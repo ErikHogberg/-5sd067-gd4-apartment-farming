@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5263771663788346503}
   - component: {fileID: 4484437091137939887}
   m_Layer: 0
-  m_Name: Water
+  m_Name: WaterSpray Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.53733534, g: 0.81391776, b: 0.990566, a: 1}
-      maxColor: {r: 0.4764151, g: 0.81725866, b: 1, a: 1}
+      minColor: {r: 0.53733534, g: 0.81391776, b: 0.990566, a: 0.48235294}
+      maxColor: {r: 0.4764151, g: 0.81725866, b: 1, a: 0.29803923}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0, g: 0.34294796, b: 1, a: 1}
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.03
+      scalar: 0.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -606,7 +606,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.09
+      scalar: 0.05
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4743,7 +4743,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 0.17
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2

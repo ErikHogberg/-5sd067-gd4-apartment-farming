@@ -6,21 +6,16 @@ using UnityEngine.UI;
 public class ChoosePotMenuScript : MonoBehaviour {
 
 	public Dropdown PotMenuDropdown;
-	// public Button PlacePotButton;
 
 	public static ChoosePotMenuScript MainInstance;
 
 	private PotSpotScript currentPotSpot;
 
-	// public List<GameObject> PotPrefabs;
+	public bool EnableSound = false;
 
 	void Start() {
 		MainInstance = this;
 		gameObject.SetActive(false);
-	}
-
-	void Update() {
-
 	}
 
 	public void OpenMenu(PotSpotScript potSpot) {
@@ -34,10 +29,6 @@ public class ChoosePotMenuScript : MonoBehaviour {
 
 	private void PopulateDropDown() {
 		List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
-
-		// foreach (GameObject potPrefab in PotPrefabs) {
-		// 	options.Add(new Dropdown.OptionData(potPrefab.name));
-		// }
 
 		foreach (GameObject pot in Inventory.State.Pots) {
 			options.Add(new Dropdown.OptionData(pot.GetComponent<ClickPotScript>().MenuName));
@@ -67,11 +58,9 @@ public class ChoosePotMenuScript : MonoBehaviour {
 			return;
 		}
 
-		// Instantiate(PotPrefabs[PotMenuDropdown.value],
-		// 	currentPotSpot.transform.position, // TODO: better/more consistent pos
-		// 	currentPotSpot.transform.rotation,
-		// 	currentPotSpot.transform.parent
-		// );
+		if (Inventory.State.Pots.Count < PotMenuDropdown.value - 1) {
+			return;
+		}
 
 		GameObject potToPlace = Inventory.State.Pots[PotMenuDropdown.value];
 
@@ -86,6 +75,12 @@ public class ChoosePotMenuScript : MonoBehaviour {
 			spawnTranform.rotation,
 			spawnTranform.parent // TODO: better parent object
 		);
+
+		if (EnableSound) {
+			AudioManager.instance.Play(
+				potToPlace.GetComponent<ClickPotScript>().PlacePotSoundEffect
+			);
+		}
 
 		Inventory.State.Pots.RemoveAt(PotMenuDropdown.value);
 

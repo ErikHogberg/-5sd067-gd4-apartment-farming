@@ -2,21 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FarmazonUIScript : MonoBehaviour
-{
-    void Start()
-    {
-        
-    }
+public class FarmazonUIScript : MonoBehaviour {
+	void Start() {
+
+	}
 
 	public void BuySeed(GameObject seedPrefab) {
-		Inventory.State.Cash -= seedPrefab.GetComponent<PlantPrefabScript>().Price;
+		PlantPrefabScript seed = seedPrefab.GetComponent<PlantPrefabScript>();
+		if (Inventory.State.Cash < seed.Price) {
+			return;
+		}
+		
+		Inventory.State.Cash -= seed.Price;
 		Inventory.State.Seeds.Add(seedPrefab);
 		InventoryMenuScript.MainInstance.PopulateMenu();
 	}
 
 	public void BuyPot(GameObject potPrefab) {
-		Inventory.State.Cash -= potPrefab.GetComponent<ClickPotScript>().Price;
+		ClickPotScript pot = potPrefab.GetComponent<ClickPotScript>();
+		if (Inventory.State.Cash < pot.Price) {
+			return;
+		}
+
+		Inventory.State.Cash -= pot.Price;
 		Inventory.State.Pots.Add(potPrefab);
 		InventoryMenuScript.MainInstance.PopulateMenu();
 	}

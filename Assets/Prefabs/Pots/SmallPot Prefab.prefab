@@ -81,7 +81,7 @@ MonoBehaviour:
   MenuName: Small Pot
   Description: Smol plant home
   Size: 15
-  StartSoilAmount: 0
+  Price: 100
   Plant: {fileID: 0}
   HasBeenWatered: 0
 --- !u!1 &8013395051581634243

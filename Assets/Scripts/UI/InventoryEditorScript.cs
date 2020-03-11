@@ -20,7 +20,6 @@ public class InventoryEditorScript : MonoBehaviour {
 
 }
 
-
 public static class Inventory {
 
 	public static InventoryState State;
@@ -30,9 +29,9 @@ public static class Inventory {
 [Serializable]
 public class InventoryState {
 
-	public float StartCash = 1000000f;
+	public float StartCash = 1000f;
 
-	private float cash = 1000000f;
+	private float cash = 0f;
 	public float Cash {
 		get { return cash; }
 		set {
@@ -58,7 +57,7 @@ public class InventoryState {
 	public InventoryState() {
 		Cash = StartCash;
 		DayCounterUIScript.SetValueStatic(DaysPassed, DayLimit);
-		
+		// Debug.Log("Called inventory init! " + StartCash );
 	}
 
 	public void Reset() {
@@ -68,16 +67,6 @@ public class InventoryState {
 
 }
 
-// [Serializable]
-// public struct Pot {
-// 	[Tooltip("Name in menus")]
-// 	public string name;
-// 	[Tooltip("Pot model prefab")]
-// 	public GameObject PotPrefab;
-// 	[Tooltip("How much a plant can grow in this pot")]
-// 	public int PotSize;
-// }
-
 [Serializable]
 public struct PlantGrowthState {
 	[Tooltip("Growth amount needed to change to this model")]
@@ -85,19 +74,3 @@ public struct PlantGrowthState {
 	[Tooltip("Model prefab to change to")]
 	public GameObject Prefab;
 }
-
-/*
-[Serializable]
-public struct Plant {
-	[Tooltip("Name in menus")]
-	public string name;
-	[Tooltip("Seed bag to show when inspecting")]
-	public GameObject SeedBagPrefab;
-	[Tooltip("Plant to spawn")]
-	public GameObject PlantPrefab;
-	[Tooltip("Text shown when inspecting")]
-	public string Description;
-
-}
-*/
-

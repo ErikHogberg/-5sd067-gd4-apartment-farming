@@ -20,6 +20,8 @@ public class ClickPotScript : MonoBehaviour {
 	public float Size = 0; // max soil amount
 	[Tooltip("How much the pot costs to buy")]
 	public float Price = 1; // max soil amount
+	[Tooltip("Sound effect when placing pot")]
+	public string PlacePotSoundEffect;
 
 	// public float StartSoilAmount = 0;
 	private float soilAmount;
@@ -45,18 +47,10 @@ public class ClickPotScript : MonoBehaviour {
 	void Start() {
 		Pots.Add(this);
 		SoilAmount = Size;
-		// Pots.Add(gameObject);
-		// Debug.Log("pot init size: " + Size + ", soil: " + SoilAmount);
-
 	}
 
 	private void OnDestroy() {
 		Pots.Remove(this);
-		// Pots.Remove(gameObject);
-	}
-
-	void Update() {
-
 	}
 
 	private void OnMouseDown() {
@@ -86,6 +80,7 @@ public class ClickPotScript : MonoBehaviour {
 				pot.Plant.IncreaseGrowthProgress(time, pot.SoilAmount);
 			}
 		}
+		
 	}
 
 	public void TimeStepInstantiated(float time = 5) {
