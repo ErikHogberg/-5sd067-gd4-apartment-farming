@@ -135,7 +135,12 @@ public class PlantMenuScript : MonoBehaviour {
 				return;
 			}
 
-			spawnedObject = Instantiate(prefabToInstantiate, spawnLocation, Camera.main.transform.rotation);
+			spawnedObject = Instantiate(
+				prefabToInstantiate, 
+				spawnLocation, 
+				Camera.main.transform.rotation,
+				Camera.main.transform
+			);
 			// Debug.Log("clicked pot size: " + Size + ", soil: " + SoilAmount);
 		}
 	}

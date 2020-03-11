@@ -82,6 +82,7 @@ public class ChoosePotMenuScript : MonoBehaviour {
 		}
 
 		Inventory.State.Pots.RemoveAt(PotMenuDropdown.value);
+		PotMenuDropdown.value = 0;
 
 		Destroy(currentPotSpot.gameObject);
 
