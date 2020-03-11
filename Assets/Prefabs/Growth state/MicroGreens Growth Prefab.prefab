@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartGrowthProgress: 0
-  HarvastableAtSize: 0
+  HarvastableAtSize: 14
   SizeReductionOnHarvest: 0
   ConsumeOnHarvest: 1
   HarvestValue: 0
