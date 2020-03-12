@@ -123,6 +123,7 @@ public class CameraMovementScript : MonoBehaviour {
 			&& transform.rotation == CameraSpots[CurrentSpot].Spot.transform.rotation
 		) {
 			ComputerUIScript.MainInstance.OpenMenu();
+			InventoryMenuScript.MainInstance.OpenMenu();
 		}
 
 	}

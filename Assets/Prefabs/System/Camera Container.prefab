@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a58042f332af148ba30422f23508d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundEffect: Watering
 --- !u!1 &1291603814613182443
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,8 +34,8 @@ public class InventoryMenuScript : MonoBehaviour {
 		outText += Environment.NewLine + Environment.NewLine + "Seeds";
 		foreach (GameObject item in Inventory.State.Seeds) {
 			outText += Environment.NewLine
-				+ item.name
-				+ " (" + item.GetComponent<PlantPrefabScript>().Description + ")"
+				+ item.GetComponent<PlantPrefabScript>().name
+				// + " (" + item.GetComponent<PlantPrefabScript>().Description + ")"
 			;
 		}
 
