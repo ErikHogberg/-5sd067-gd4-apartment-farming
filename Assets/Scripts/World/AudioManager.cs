@@ -2,11 +2,16 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class AudioManager : MonoBehaviour {
+
 	public sounds[] Sounds;
 
+	public UnityEvent OnFirstAwake;
+
 	public static AudioManager instance;
+
 
 	private void Awake() {
 		if (instance == null)
@@ -26,6 +31,9 @@ public class AudioManager : MonoBehaviour {
 			s.source.pitch = s.pitch;
 			s.source.loop = s.loop;
 		}
+
+		// Play(MainTheme);
+		OnFirstAwake.Invoke();
 	}
 
 	public void Start() {
@@ -44,6 +52,8 @@ public class AudioManager : MonoBehaviour {
 		}
 
 		s.source.Play();
+		Debug.Log("played sound " + name);
+
 	}
 
 	private sounds CheckSound(string name) {
@@ -77,6 +87,7 @@ public class AudioManager : MonoBehaviour {
 		s.source.Play();
 	}
 }
+
 [System.Serializable]
 public class sounds {
 	public string Name;
