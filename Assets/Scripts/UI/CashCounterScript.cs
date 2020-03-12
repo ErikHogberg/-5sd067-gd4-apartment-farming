@@ -19,6 +19,10 @@ public class CashCounterScript : MonoBehaviour {
 		SetValue(initValue);
 	}
 
+	private void OnDestroy() {
+		MainInstances.Remove(this);
+	}
+
 	public void SetValue(float value) {
 		text.text = Prefix + value + Suffix;
 	}

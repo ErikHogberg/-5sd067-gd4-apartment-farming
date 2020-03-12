@@ -77,7 +77,7 @@ LightmapSettings:
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
-    m_PVRBounces: 2
+    m_PVRBounces: 4
     m_PVREnvironmentSampleCount: 500
     m_PVREnvironmentReferencePointCount: 2048
     m_PVRFilteringMode: 2
@@ -1705,7 +1705,8 @@ MonoBehaviour:
   currentPot: {fileID: 0}
   PlantSoundEffect: 
   HarvestSoundEffect: 
-  RemoveSoundEffect: 
+  RemovePlantSoundEffect: 
+  RemovePotSoundEffect: 
   OnOpenMenuAction:
     m_PersistentCalls:
       m_Calls: []
@@ -3175,6 +3176,16 @@ PrefabInstance:
     - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
         type: 3}
       propertyPath: RemoveSoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: RemovePlantSoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: RemovePotSoundEffect
       value: PPlarge
       objectReference: {fileID: 0}
     - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
@@ -7309,7 +7320,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetGlobals: 0
   State:
-    EnableSound: 1
     StartCash: 1000
     Pots: []
     Seeds: []
@@ -12279,6 +12289,7 @@ GameObject:
   - component: {fileID: 7163233333664406107}
   - component: {fileID: 1769102010030804845}
   - component: {fileID: 95154447956278107}
+  - component: {fileID: 7547290247775361525}
   m_Layer: 0
   m_Name: pCube89
   m_TagString: Untagged
@@ -12286,6 +12297,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &7547290247775361525
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547290247775361524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2462094995631150537, guid: c1eb498564764e54cb7e425983a569ce, type: 3}
 --- !u!4 &7605662902352625664
 Transform:
   m_ObjectHideFlags: 0

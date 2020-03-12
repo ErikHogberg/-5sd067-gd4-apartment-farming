@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class AudioManager : MonoBehaviour {
 
+	public bool DisableSound = false;
+
 	public sounds[] Sounds;
 
 	public UnityEvent OnFirstAwake;
@@ -46,6 +48,10 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void Play(string name) {
+		if (DisableSound){
+			return;
+		}
+
 		sounds s = CheckSound(name);
 		if (s == null) {
 			return;

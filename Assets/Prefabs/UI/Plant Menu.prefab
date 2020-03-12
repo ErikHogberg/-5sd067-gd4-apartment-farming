@@ -541,7 +541,8 @@ MonoBehaviour:
   currentPot: {fileID: 0}
   PlantSoundEffect: Seed sound
   HarvestSoundEffect: Harvest sound
-  RemoveSoundEffect: Rustleplants
+  RemovePlantSoundEffect: 
+  RemovePotSoundEffect: 
   OnOpenMenuAction:
     m_PersistentCalls:
       m_Calls: []
@@ -2594,7 +2595,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 620491806056965616}
-        m_MethodName: RemovePlant
+        m_MethodName: RemovePlantOrPot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
