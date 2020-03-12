@@ -41,7 +41,8 @@ public class ClickPotScript : MonoBehaviour {
 
 	public PlantPrefabScript Plant = null;
 	public bool HasBeenWatered = false;
-
+	public GameObject PotSpot;
+	// public Prefab OriginalPrefab;
 
 
 	void Start() {

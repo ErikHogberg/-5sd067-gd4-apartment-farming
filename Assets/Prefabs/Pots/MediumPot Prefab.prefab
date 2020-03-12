@@ -85,6 +85,8 @@ MonoBehaviour:
   PlacePotSoundEffect: PPmedium
   Plant: {fileID: 0}
   HasBeenWatered: 0
+  PotSpot: {fileID: 0}
+  OriginalPrefab: {fileID: 6488449048213710738}
 --- !u!1 &8013395051581634243
 GameObject:
   m_ObjectHideFlags: 0

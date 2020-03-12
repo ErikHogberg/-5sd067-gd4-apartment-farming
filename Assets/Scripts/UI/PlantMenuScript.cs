@@ -22,7 +22,7 @@ public class PlantMenuScript : MonoBehaviour {
 	public string PlantSoundEffect;
 	public string HarvestSoundEffect;
 	public string RemovePlantSoundEffect;
-	// public string RemovePotSoundEffect;
+	public string RemovePotSoundEffect;
 
 	public UnityEvent OnOpenMenuAction;
 
@@ -83,11 +83,11 @@ public class PlantMenuScript : MonoBehaviour {
 
 		HarvestButton.interactable = IsHarvestable();
 
-		// if (currentPot.Plant != null) {
+		if (currentPot.Plant != null) {
 			RemovePlantButtonText.text = "Remove Plant";
-		// } else {
-			// RemovePlantButtonText.text = "Remove Pot";
-		// }
+		} else {
+			RemovePlantButtonText.text = "Remove Pot";
+		}
 
 	}
 
@@ -190,9 +190,7 @@ public class PlantMenuScript : MonoBehaviour {
 		Inventory.State.Seeds.RemoveAt(PlantMenuDropdown.value);
 		PlantMenuDropdown.value = 0;
 
-		if (Inventory.State.EnableSound) {
-			AudioManager.instance.Play(PlantSoundEffect);
-		}
+		AudioManager.instance.Play(PlantSoundEffect);
 
 		UpdateUI();
 		// PopulateDropdown();
@@ -207,9 +205,7 @@ public class PlantMenuScript : MonoBehaviour {
 				currentPot.Plant.GrowthProgress -= currentPot.Plant.HarvastableAtSize;
 			}
 
-			if (Inventory.State.EnableSound) {
-				AudioManager.instance.Play(HarvestSoundEffect);
-			}
+			AudioManager.instance.Play(HarvestSoundEffect);
 
 			Inventory.State.Cash += currentPot.Plant.HarvestValue;
 		}
@@ -229,33 +225,27 @@ public class PlantMenuScript : MonoBehaviour {
 			currentPot.RemovePlant();
 			ClearObject();
 			UpdateUI();
-			if (Inventory.State.EnableSound) {
-				AudioManager.instance.Play(RemovePlantSoundEffect);
-			}
+			AudioManager.instance.Play(RemovePlantSoundEffect);
 		} 
 	}
 
-	// public void RemovePot() {
-	// 	if (currentPot.Plant == null) {
-	// 		Instantiate(
-	// 			PotSpotPrefab,
-	// 			currentPot.position
-	// 		);
-	// 		Destroy(currentPot.gameObject);
-	// 		CloseMenu();
-	// 		if (Inventory.State.EnableSound) {
-	// 			AudioManager.instance.Play(RemovePotSoundEffect);
-	// 		}
-	// 	} 
-	// }
+	public void RemovePot() {
+		if (currentPot.Plant == null) {
+			currentPot.PotSpot.SetActive(true);
+			// Inventory.State.Pots.Add(currentPot.OriginalPrefab); // FIXME: add instance instead of prefab
+			Destroy(currentPot.gameObject);
+			CloseMenu();
+			AudioManager.instance.Play(RemovePotSoundEffect);
+		} 
+	}
 
-	// public void RemovePlantOrPot() {
-	// 	if (currentPot.Plant != null) {
-	// 		RemovePlant();
-	// 	} else {
-	// 		RemovePot();
-	// 	}
-	// }
+	public void RemovePlantOrPot() {
+		if (currentPot.Plant != null) {
+			RemovePlant();
+		} else {
+			RemovePot();
+		}
+	}
 
 
 	public void DebugTimestep(float timeAmount) {

@@ -16,9 +16,7 @@ public class FarmazonUIScript : MonoBehaviour {
 		Inventory.State.Seeds.Add(seedPrefab);
 		InventoryMenuScript.MainInstance.PopulateMenu();
 
-		if (Inventory.State.EnableSound) {
-			AudioManager.instance.Play(BuySoundEffect);
-		}
+		AudioManager.instance.Play(BuySoundEffect);
 	}
 
 	public void BuyPot(GameObject potPrefab) {
@@ -31,9 +29,7 @@ public class FarmazonUIScript : MonoBehaviour {
 		Inventory.State.Pots.Add(potPrefab);
 		InventoryMenuScript.MainInstance.PopulateMenu();
 
-		if (Inventory.State.EnableSound) {
-			AudioManager.instance.Play(BuySoundEffect);
-		}
+		AudioManager.instance.Play(BuySoundEffect);
 	}
 
 }
