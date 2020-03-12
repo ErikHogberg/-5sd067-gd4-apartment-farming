@@ -1705,7 +1705,8 @@ MonoBehaviour:
   currentPot: {fileID: 0}
   PlantSoundEffect: 
   HarvestSoundEffect: 
-  RemoveSoundEffect: 
+  RemovePlantSoundEffect: 
+  RemovePotSoundEffect: 
   OnOpenMenuAction:
     m_PersistentCalls:
       m_Calls: []
@@ -3175,6 +3176,16 @@ PrefabInstance:
     - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
         type: 3}
       propertyPath: RemoveSoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: RemovePlantSoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: RemovePotSoundEffect
       value: PPlarge
       objectReference: {fileID: 0}
     - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,

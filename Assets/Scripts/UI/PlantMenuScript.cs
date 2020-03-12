@@ -21,9 +21,12 @@ public class PlantMenuScript : MonoBehaviour {
 
 	public string PlantSoundEffect;
 	public string HarvestSoundEffect;
-	public string RemoveSoundEffect;
+	public string RemovePlantSoundEffect;
+	// public string RemovePotSoundEffect;
 
 	public UnityEvent OnOpenMenuAction;
+
+	// public GameObject PotSpotPrefab;
 
 	private static GameObject spawnedObject = null;
 
@@ -80,11 +83,11 @@ public class PlantMenuScript : MonoBehaviour {
 
 		HarvestButton.interactable = IsHarvestable();
 
-		if (currentPot.Plant != null) {
+		// if (currentPot.Plant != null) {
 			RemovePlantButtonText.text = "Remove Plant";
-		} else {
-			RemovePlantButtonText.text = "Remove Pot";
-		}
+		// } else {
+			// RemovePlantButtonText.text = "Remove Pot";
+		// }
 
 	}
 
@@ -227,12 +230,33 @@ public class PlantMenuScript : MonoBehaviour {
 			ClearObject();
 			UpdateUI();
 			if (Inventory.State.EnableSound) {
-				AudioManager.instance.Play(RemoveSoundEffect);
+				AudioManager.instance.Play(RemovePlantSoundEffect);
 			}
-		} else {
-			// TODO: remove pot, close this menu
-		}
+		} 
 	}
+
+	// public void RemovePot() {
+	// 	if (currentPot.Plant == null) {
+	// 		Instantiate(
+	// 			PotSpotPrefab,
+	// 			currentPot.position
+	// 		);
+	// 		Destroy(currentPot.gameObject);
+	// 		CloseMenu();
+	// 		if (Inventory.State.EnableSound) {
+	// 			AudioManager.instance.Play(RemovePotSoundEffect);
+	// 		}
+	// 	} 
+	// }
+
+	// public void RemovePlantOrPot() {
+	// 	if (currentPot.Plant != null) {
+	// 		RemovePlant();
+	// 	} else {
+	// 		RemovePot();
+	// 	}
+	// }
+
 
 	public void DebugTimestep(float timeAmount) {
 		ClickPotScript.TimeStep(timeAmount);
