@@ -77,7 +77,7 @@ LightmapSettings:
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
-    m_PVRBounces: 2
+    m_PVRBounces: 4
     m_PVREnvironmentSampleCount: 500
     m_PVREnvironmentReferencePointCount: 2048
     m_PVRFilteringMode: 2
@@ -1703,6 +1703,10 @@ MonoBehaviour:
   RemovePlantButtonText: {fileID: 0}
   InspectFadePanel: {fileID: 0}
   currentPot: {fileID: 0}
+  PlantSoundEffect: 
+  HarvestSoundEffect: 
+  RemovePlantSoundEffect: 
+  RemovePotSoundEffect: 
   OnOpenMenuAction:
     m_PersistentCalls:
       m_Calls: []
@@ -3079,6 +3083,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 142106450026932906, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: BuySoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
     - target: {fileID: 1291603814613182443, guid: 546023d82cd9b0649a6be1967b1435a2,
         type: 3}
       propertyPath: m_Name
@@ -3139,10 +3148,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916412871443319020, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: SoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
     - target: {fileID: 2471870016592805479, guid: 546023d82cd9b0649a6be1967b1435a2,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110665183405528381, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: PlantSoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: HarvestSoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: RemoveSoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: RemovePlantSoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580849127536, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: RemovePotSoundEffect
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: OnFadeOutStartEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: OnFadeOutStartEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: OnFadeOutStartEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: OnFadeOutStartEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 690749459}
+    - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: OnFadeOutStartEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: OnFadeOutStartEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: OnFadeOutStartEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: OnFadeOutStartEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581361580983753195, guid: 546023d82cd9b0649a6be1967b1435a2,
+        type: 3}
+      propertyPath: OnFadeOutStartEvents.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3581361581181360928, guid: 546023d82cd9b0649a6be1967b1435a2,
         type: 3}
@@ -3399,6 +3488,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3b3ae76896c65a545894b5cd3de55d59, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6202b7202038ea4ba582bead70a669b, type: 3}
+--- !u!114 &690749459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1096096351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38d70f1863baa947a6e3ccc3eed147e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &691188679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,6 +5484,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b63368b25327b4b8691959a34cf135, type: 3}
+--- !u!1001 &1096096351
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: OnFirstAwake.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PPlarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620318020626145292, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: OnFirstAwake.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: PPmedium
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530672, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844457106032530673, guid: c7d4fa8c8e8135747b5b21a6b08a58dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7d4fa8c8e8135747b5b21a6b08a58dd, type: 3}
 --- !u!1 &1100138531
 GameObject:
   m_ObjectHideFlags: 0
@@ -7140,7 +7320,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetGlobals: 0
   State:
-    EnableSound: 1
     StartCash: 1000
     Pots: []
     Seeds: []
@@ -12110,6 +12289,7 @@ GameObject:
   - component: {fileID: 7163233333664406107}
   - component: {fileID: 1769102010030804845}
   - component: {fileID: 95154447956278107}
+  - component: {fileID: 7547290247775361525}
   m_Layer: 0
   m_Name: pCube89
   m_TagString: Untagged
@@ -12117,6 +12297,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &7547290247775361525
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547290247775361524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2462094995631150537, guid: c1eb498564764e54cb7e425983a569ce, type: 3}
 --- !u!4 &7605662902352625664
 Transform:
   m_ObjectHideFlags: 0

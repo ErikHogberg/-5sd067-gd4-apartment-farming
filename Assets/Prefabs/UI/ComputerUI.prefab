@@ -1402,6 +1402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629695851977d3f4cb55e37bcdb31ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuySoundEffect: Cash register sound
 --- !u!1 &2299077008138254782
 GameObject:
   m_ObjectHideFlags: 0

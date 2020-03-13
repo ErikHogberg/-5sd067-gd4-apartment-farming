@@ -29,7 +29,7 @@ public static class Inventory {
 [Serializable]
 public class InventoryState {
 
-	public bool EnableSound = false;
+	// public bool EnableSound = false;
 	public float StartCash = 1000f;
 
 	private float cash = 0f;

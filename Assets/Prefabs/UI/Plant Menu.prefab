@@ -539,6 +539,10 @@ MonoBehaviour:
   RemovePlantButtonText: {fileID: 225213557232890782}
   InspectFadePanel: {fileID: 0}
   currentPot: {fileID: 0}
+  PlantSoundEffect: Seed sound
+  HarvestSoundEffect: Harvest sound
+  RemovePlantSoundEffect: 
+  RemovePotSoundEffect: 
   OnOpenMenuAction:
     m_PersistentCalls:
       m_Calls: []
@@ -950,7 +954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -180}
+  m_AnchoredPosition: {x: 0, y: -53.599976}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &620491806352605075
@@ -2097,7 +2101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -214}
+  m_AnchoredPosition: {x: 0, y: -87.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &620491807653535881
@@ -2331,7 +2335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -50}
+  m_AnchoredPosition: {x: 10, y: 63.2}
   m_SizeDelta: {x: 194.8, y: 155.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7774957819858636439
@@ -2508,7 +2512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -247}
+  m_AnchoredPosition: {x: 0, y: -185.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &402903186407300479
@@ -2591,7 +2595,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 620491806056965616}
-        m_MethodName: RemovePlant
+        m_MethodName: RemovePlantOrPot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

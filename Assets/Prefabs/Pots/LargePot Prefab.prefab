@@ -86,6 +86,8 @@ MonoBehaviour:
   PlacePotSoundEffect: PPlarge
   Plant: {fileID: 0}
   HasBeenWatered: 0
+  PotSpot: {fileID: 0}
+  OriginalPrefab: {fileID: 6488449048213710738}
 --- !u!64 &2137760776377432913
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -30,10 +30,6 @@ public class LaptopScripCollection : MonoBehaviour {
 		MenuDropdown.options = options;
 	}
 
-	void Update() {
-
-	}
-
 	public void DropdownValueChange (int value){
 		HideAll();
 		if (entries[value].menu == null) {

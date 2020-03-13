@@ -19,8 +19,14 @@ public class PlantMenuScript : MonoBehaviour {
 
 	public ClickPotScript currentPot;
 
+	public string PlantSoundEffect;
+	public string HarvestSoundEffect;
+	public string RemovePlantSoundEffect;
+	public string RemovePotSoundEffect;
 
 	public UnityEvent OnOpenMenuAction;
+
+	// public GameObject PotSpotPrefab;
 
 	private static GameObject spawnedObject = null;
 
@@ -135,8 +141,8 @@ public class PlantMenuScript : MonoBehaviour {
 			}
 
 			spawnedObject = Instantiate(
-				prefabToInstantiate, 
-				spawnLocation, 
+				prefabToInstantiate,
+				spawnLocation,
 				Camera.main.transform.rotation,
 				Camera.main.transform
 			);
@@ -184,6 +190,8 @@ public class PlantMenuScript : MonoBehaviour {
 		Inventory.State.Seeds.RemoveAt(PlantMenuDropdown.value);
 		PlantMenuDropdown.value = 0;
 
+		AudioManager.instance.Play(PlantSoundEffect);
+
 		UpdateUI();
 		// PopulateDropdown();
 		// CloseMenu();
@@ -196,6 +204,9 @@ public class PlantMenuScript : MonoBehaviour {
 			} else {
 				currentPot.Plant.GrowthProgress -= currentPot.Plant.HarvastableAtSize;
 			}
+
+			AudioManager.instance.Play(HarvestSoundEffect);
+
 			Inventory.State.Cash += currentPot.Plant.HarvestValue;
 		}
 		UpdateUI();
@@ -214,10 +225,28 @@ public class PlantMenuScript : MonoBehaviour {
 			currentPot.RemovePlant();
 			ClearObject();
 			UpdateUI();
+			AudioManager.instance.Play(RemovePlantSoundEffect);
+		} 
+	}
+
+	public void RemovePot() {
+		if (currentPot.Plant == null) {
+			currentPot.PotSpot.SetActive(true);
+			// Inventory.State.Pots.Add(currentPot.OriginalPrefab); // FIXME: add instance instead of prefab
+			Destroy(currentPot.gameObject);
+			CloseMenu();
+			AudioManager.instance.Play(RemovePotSoundEffect);
+		} 
+	}
+
+	public void RemovePlantOrPot() {
+		if (currentPot.Plant != null) {
+			RemovePlant();
 		} else {
-			// TODO: remove pot, close this menu
+			RemovePot();
 		}
 	}
+
 
 	public void DebugTimestep(float timeAmount) {
 		ClickPotScript.TimeStep(timeAmount);

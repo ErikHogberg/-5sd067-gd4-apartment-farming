@@ -70,23 +70,24 @@ public class ChoosePotMenuScript : MonoBehaviour {
 			spawnTranform = currentPotSpot.transform;
 		}
 
-		Instantiate(
+		GameObject newPotObject = Instantiate(
 			potToPlace,
 			spawnTranform.position,
 			spawnTranform.rotation,
 			spawnTranform.parent // TODO: better parent object
 		);
+		ClickPotScript newPot = newPotObject.GetComponent<ClickPotScript>();
+		newPot.PotSpot = currentPotSpot.gameObject;
 
-		if (Inventory.State.EnableSound) {
-			AudioManager.instance.Play(
-				potToPlace.GetComponent<ClickPotScript>().PlacePotSoundEffect
-			);
-		}
+		AudioManager.instance.Play(
+			newPot.PlacePotSoundEffect
+		);
 
 		Inventory.State.Pots.RemoveAt(PotMenuDropdown.value);
 		PotMenuDropdown.value = 0;
 
-		Destroy(currentPotSpot.gameObject);
+		// Destroy(currentPotSpot.gameObject);
+		currentPotSpot.gameObject.SetActive(false);
 
 
 
