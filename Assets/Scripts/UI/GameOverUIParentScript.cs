@@ -17,6 +17,7 @@ public class GameOverUIParentScript : MonoBehaviour {
 
 	public void OpenMenu(){
 		StandardMenu.SetActive(false);
+		CameraMaskModeScript.SetMaskModeStatic(CameraMaskModeScript.MaskMode.Plants);
 		gameObject.SetActive(true);
 	}
 

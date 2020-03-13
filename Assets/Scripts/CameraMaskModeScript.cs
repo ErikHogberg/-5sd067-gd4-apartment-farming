@@ -16,6 +16,8 @@ public class CameraMaskModeScript : MonoBehaviour {
 	public LayerMask PotSpotMask;
 	public LayerMask PlantMask;
 
+	public static MaskMode InitMaskMode = MaskMode.PotSpots;
+
 	private MaskMode currentMaskMode;
 	public MaskMode CurrentMaskMode {
 		get {
@@ -41,10 +43,16 @@ public class CameraMaskModeScript : MonoBehaviour {
 	void Start() {
 		MainInstance = this;
 		mainCamera = GetComponent<Camera>();
-		CurrentMaskMode = MaskMode.Plants;
+		CurrentMaskMode = InitMaskMode;
 	}
 
-	void Update() {
-
+	public static void SetMaskModeStatic(MaskMode maskMode) {
+		InitMaskMode = maskMode;
+		// Debug.Log("set init mask");
+		if (MainInstance != null) {
+			MainInstance.CurrentMaskMode = maskMode;
+		// Debug.Log("set instance mask");
+		}
 	}
+
 }
