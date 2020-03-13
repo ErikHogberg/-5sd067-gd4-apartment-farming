@@ -8,21 +8,46 @@ public class GameOverUIParentScript : MonoBehaviour {
 
 	public GameObject StandardMenu;
 
+	public static bool OpenOnStart = false;
+
 	void Start() {
 
 		MainInstance = this;
-		CloseMenu();
+		if (OpenOnStart) {
+			OpenMenu();
+		} else {
+			CloseMenu();
+		}
 
 	}
 
-	public void OpenMenu(){
+	private void OnDestroy() {
+		OpenOnStart = false;
+	}
+
+	public void OpenMenu() {
 		StandardMenu.SetActive(false);
+		CameraMaskModeScript.SetMaskModeStatic(CameraMaskModeScript.MaskMode.Plants);
 		gameObject.SetActive(true);
 	}
 
-	public void CloseMenu(){
+	public void CloseMenu() {
 		StandardMenu.SetActive(true);
 		gameObject.SetActive(false);
+	}
+
+	public static void OpenMenuStatic() {
+		OpenOnStart = true;
+		if (MainInstance != null) {
+			MainInstance.OpenMenu();
+		}
+	}
+
+	public static void CloseMenuStatic() {
+		OpenOnStart = false;
+		if (MainInstance != null) {
+			MainInstance.CloseMenu();
+		}
 	}
 
 }

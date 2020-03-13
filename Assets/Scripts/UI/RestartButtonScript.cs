@@ -10,4 +10,8 @@ public class RestartButtonScript : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 	}
 
+	public void QuitGame(){
+		Application.Quit();
+	}
+
 }

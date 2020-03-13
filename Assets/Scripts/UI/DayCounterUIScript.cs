@@ -16,10 +16,19 @@ public class DayCounterUIScript : MonoBehaviour {
 	public string Infix = " out of ";
 	public string Suffix = "!";
 
+	private bool updateValueFromStatic = false;
+
 	private void Start() {
 		MainInstance = this;
 		text = GetComponent<Text>();
 		SetValue(dayInitValue, dayLimitInitValue);
+	}
+
+	private void Update() {
+		if (updateValueFromStatic) {
+			MainInstance.SetValue(dayInitValue, dayLimitInitValue);
+			updateValueFromStatic = false;
+		}
 	}
 
 	public void SetValue(float dayValue, float dayLimitValue) {
@@ -29,9 +38,10 @@ public class DayCounterUIScript : MonoBehaviour {
 	public static void SetValueStatic(float dayValue, float dayLimitValue) {
 		dayInitValue = dayValue;
 		dayLimitInitValue = dayLimitValue;
-		
+
 		if (MainInstance != null) {
-			MainInstance.SetValue(dayValue, dayLimitValue);
+			// MainInstance.SetValue(dayValue, dayLimitValue);
+			MainInstance.updateValueFromStatic = true;
 		}
 	}
 }

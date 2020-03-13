@@ -12,14 +12,16 @@ public class PlacePotsToggleScript : MonoBehaviour {
 	void Start() {
 		toggle = GetComponent<Toggle>();
 		toggle.onValueChanged.AddListener(ToggleFunction);
-		// ToggleFunction(toggle.isOn);
+		ToggleFunction(toggle.isOn);
 	}
 
 	public static void ToggleFunction(bool toggleValue) {
 		if (toggleValue) {
-			CameraMaskModeScript.MainInstance.CurrentMaskMode = CameraMaskModeScript.MaskMode.PotSpots;
+			// CameraMaskModeScript.MainInstance.CurrentMaskMode = CameraMaskModeScript.MaskMode.PotSpots;
+			CameraMaskModeScript.SetMaskModeStatic(CameraMaskModeScript.MaskMode.PotSpots);
 		} else {
-			CameraMaskModeScript.MainInstance.CurrentMaskMode = CameraMaskModeScript.MaskMode.Plants;
+			// CameraMaskModeScript.MainInstance.CurrentMaskMode = CameraMaskModeScript.MaskMode.Plants;
+			CameraMaskModeScript.SetMaskModeStatic(CameraMaskModeScript.MaskMode.Plants);
 			ChoosePotMenuScript.CloseStaticMenu();
 		}
 	}

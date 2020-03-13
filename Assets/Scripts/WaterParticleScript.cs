@@ -17,7 +17,7 @@ public class WaterParticleScript : MonoBehaviour {
 	
 	public void StartSpray() {
 		WaterParticles.Play();
-		AudioManager.instance.Play(SoundEffect);
+		// AudioManager.instance.Play(SoundEffect);
 	}
 
 }

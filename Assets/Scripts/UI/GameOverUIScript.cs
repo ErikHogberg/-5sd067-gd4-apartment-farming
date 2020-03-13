@@ -13,9 +13,19 @@ public class GameOverUIScript : MonoBehaviour {
 	public string Prefix;
 	public string Suffix;
 
+	public static bool OpenOnStart = false;
+
 	void Start() {
 		MainInstance = this;
-		CloseMenu();
+		if (OpenOnStart) {
+			OpenMenu();
+		} else {
+			CloseMenu();
+		}
+	}
+
+	private void OnDestroy() {
+		OpenOnStart = false;
 	}
 
 	public void OpenMenu() {
@@ -27,6 +37,21 @@ public class GameOverUIScript : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
+	public static void OpenMenuStatic() {
+		OpenOnStart = true;
+		if (MainInstance != null) {
+			MainInstance.OpenMenu();
+		}
+	}
+
+	public static void CloseMenuStatic() {
+		OpenOnStart = false;
+		if (MainInstance != null) {
+			MainInstance.CloseMenu();
+		}
+	}
+
+
 	public void ToggleMenu() {
 		if (gameObject.activeSelf) {
 			CloseMenu();
@@ -35,7 +60,7 @@ public class GameOverUIScript : MonoBehaviour {
 		}
 	}
 
-	public void RestartGame(){
+	public void RestartGame() {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 	}
 

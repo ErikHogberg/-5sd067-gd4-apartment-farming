@@ -13,6 +13,8 @@ public class CashCounterScript : MonoBehaviour {
 	public string Prefix = "Cash: ";
 	public string Suffix = "kr";
 
+	private bool updateValueFromStatic = false;
+
 	private void Start() {
 		MainInstances.Add(this);
 		text = GetComponent<Text>();
@@ -23,14 +25,23 @@ public class CashCounterScript : MonoBehaviour {
 		MainInstances.Remove(this);
 	}
 
+	private void Update() {
+		if (updateValueFromStatic)
+		{
+			SetValue(initValue);
+			updateValueFromStatic = false;
+		}
+	}
+
 	public void SetValue(float value) {
-		text.text = Prefix + value + Suffix;
+		text.text = Prefix + value + Suffix;		
 	}
 
 	public static void SetValueStatic(float value) {
 		initValue = value;
 		foreach (CashCounterScript instance in MainInstances) {
-			instance.SetValue(value);
+			// instance.SetValue(value);
+			instance.updateValueFromStatic = true;
 		}
 	}
 

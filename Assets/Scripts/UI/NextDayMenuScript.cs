@@ -120,8 +120,8 @@ public class NextDayMenuScript : MonoBehaviour {
 		ClickPotScript.TimeStep(DaySlider.value);
 		Inventory.State.DaysPassed += (int)DaySlider.value;
 		if (Inventory.State.DaysPassed > Inventory.State.DayLimit) {
-			GameOverUIParentScript.MainInstance.OpenMenu();
-			GameOverUIScript.MainInstance.OpenMenu();
+			GameOverUIParentScript.OpenMenuStatic();
+			GameOverUIScript.OpenMenuStatic();
 		}
 
 		Inventory.State.Cash -= CashCostPerDay * DaySlider.value;
